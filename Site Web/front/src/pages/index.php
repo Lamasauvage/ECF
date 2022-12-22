@@ -7,9 +7,11 @@
 
   <body>
     <!-- Navbar -->
-    <?php include_once 'C:\Users\gadam\Documents\XAMPP\htdocs\STUDI\ECF\Site Web\front\src\templates\navbar.php'; ?>
+    <?php include_once '../templates/navbar.php'; ?>
 
-    
+    <!-- Login forms -->
+    <?php include_once '../templates/form.php'; ?>
+
   </body>
 </html>
 

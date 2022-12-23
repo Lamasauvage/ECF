@@ -1,9 +1,11 @@
 
 <form method="post">
-  <input type="email" name="email" placeholder="Email" id="email" required>
-  <input type="password" name="password" placeholder="Mot de passe" id="password" required>
-  <input type="submit" name="formsend" id="formsend">
-</form>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br>
+  <label for="password">Mot de passe:</label><br>
+  <input type="password" id="password" name="password" required><br><br>
+  <input type="submit" value="Se connecter">
+</form> 
 
 <?php
   if(isset($_POST['formsend'])){

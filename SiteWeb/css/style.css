@@ -21,9 +21,5 @@
 
 .navbar li {
   display: inline-block;
-}
-
-
-p {
-  color:red
+  text-transform: uppercase;
 }

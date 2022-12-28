@@ -1,1 +1,0 @@
-Pour réserver une table

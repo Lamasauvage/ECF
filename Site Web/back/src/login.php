@@ -1,4 +1,4 @@
-
+<!--
 <?php
   // Récupération des données de connexion soumises par l'utilisateur
   $email = $_POST['email'];

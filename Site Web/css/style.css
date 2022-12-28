@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+.banner-image {
+  background-image: url(../../../img/cover.jpg);
+  display: flex;
+  background-size: cover;
+  height: 900px;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  color:red
+}

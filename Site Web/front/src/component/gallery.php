@@ -1,3 +1,40 @@
-<?php
+<section class="gallery-links">
+  <div class="wrapper">
+    <h2>Gallery</h2>
 
-$images = array('plat1.jpg', 'plat1.jpg', 'plat1.jpg', 'plat1.jpg', 'plat1.jpg', 'plat1.jpg');
+    <div class="gallery-container">
+      <a href="#">
+        <div></div>
+        <h3>Title</h3>
+        <p>Description</p>
+      </a>
+      <a href="#">
+        <div></div>
+        <h3>Title</h3>
+        <p>Description</p>
+      </a>
+      <a href="#">
+        <div></div>
+        <h3>Title</h3>
+        <p>Description</p>
+      </a>
+      <a href="#">
+        <div></div>
+        <h3>Title</h3>
+        <p>Description</p>
+      </a>
+      <a href="#">
+        <div></div>
+        <h3>Title</h3>
+        <p>Description</p>
+      </a>
+      <a href="#">
+        <div></div>
+        <h3>Title</h3>
+        <p>Description</p>
+      </a>
+    </div>
+
+    
+
+  </section>

@@ -13,6 +13,17 @@
   justify-content: center;
 }
 
+#logo {
+  height: 100px;
+  width: 100px;
+  border-radius: 180%;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+
 p {
   color:red
 }

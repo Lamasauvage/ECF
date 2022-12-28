@@ -19,7 +19,8 @@
     <!-- Login forms -->
     <?php include_once '../templates/form.php'; ?>
 
-    <div class="gal
+    <!-- Gallery -->
+    <?php include_once '../component/gallery.php'; ?>
 
   </body>
 </html>

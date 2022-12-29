@@ -19,9 +19,34 @@
 
           <button type="submit" name="submit">Créer un compte</button>
           <button type="reset">Annuler</button>
-          
+
         </form>
       </div>
+      <?php
+
+      // DISPLAY ERROR MESSAGES
+
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+          echo "<p>Veuillez renseigner tous les champs</p>";
+        }
+        else if ($_GET["error"] == "invalidemail") {
+          echo "<p>Email invalide</p>";
+        }
+        else if ($_GET["error"] == "passwordsdontmatch") {
+          echo "<p>Les mots de passe ne correspondent pas</p>";
+        }
+        else if ($_GET["error"] == "emailalreadyexists") {
+          echo "<p>L'email existe déjà</p>";
+        }
+        else if ($_GET["error"] == "stmtfailed") {
+          echo "<p>Désolé, quelque chose s'est mal passé !</p>";
+        }
+        else if ($_GET["error"] == "none") {
+          echo "<p>Votre compte a été crée avec succès !</p>";
+        }
+      }
+    ?>
     </section>
-    
+
   <?php include_once '../templates/footer.php'; ?>

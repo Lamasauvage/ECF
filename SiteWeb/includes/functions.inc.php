@@ -1,43 +1,36 @@
 <?php
 
+// SIGNUP PAGE
+
 // Function Empty Input Signup
 function emptyInputSignup($email, $pwd, $pwdRepeat) {
-  $result;
+  $result = false;
   if (empty($email) || empty($pwd) || empty($pwdRepeat)) {
     $result = true;
-  }
-  else {
-    $result = false;
   }
   return $result;
 }
 
 // Function Invalid Email
 function invalidEmail($email) {
-  $result;
+  $result = false;
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $result = true;
-  }
-  else {
-    $result = false;
   }
   return $result;
 }
 
 // Function Password Match
 function pwdMatch($pwd, $pwdRepeat) {
-  $result;
+  $result = false;
   if ($pwd !== $pwdRepeat) {
     $result = true;
-  }
-  else {
-    $result = false;
   }
   return $result;
 }
 
 // Function Email Already Exists (check the usersEmail in the DB)
-function emailExists($conn, $email) {
+function userEmailExists($conn, $email) {
  $sql = "SELECT * FROM users WHERE usersEmail = ?;";
  $stmt = mysqli_stmt_init($conn);
  if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -82,3 +75,41 @@ function createUser($conn, $email, $pwd) {
   exit();
 
  }
+
+ // LOGIN PAGE
+
+ function emptyInputLogin($email, $pwd,) {
+  $result = false;
+  if (empty($email) || empty($pwd)) {
+    $result = true;
+  }
+  return $result;
+}
+
+// LOGIN USER
+
+function loginUser($conn, $email, $pwd) {
+  $userEmailExists = userEmailExists($conn, $email);
+
+  if ($userEmailExists === false) {
+    header("location: ../../../front/src/pages/login.php?error=wronglogin");
+    exit();
+  }
+
+// PASSWORD CHECK
+
+  $pwdHashed = $userEmailExists["usersPwd"];
+  $checkPwd = password_verify($pwd, $pwdHashed);
+
+  if ($checkPwd === false) {
+    header("location: ../../../front/src/pages/login.php?error=wronglogin");
+    exit();
+  }
+  else if ($checkPwd === true) {
+    session_start();
+    $_SESSION["userid"] = $userEmailExists["usersId"];
+    $_SESSION["useruid"] = $userEmailExists["userUid"];
+    header("location: ../../../front/src/pages/index.php");
+    exit();
+  }
+}

@@ -15,6 +15,20 @@
 
         <button type="submit" name="submit">Connexion</button>
       </form>
+
+      <?php
+
+      // DISPLAY ERROR MESSAGES
+
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+          echo "<p>Veuillez renseigner tous les champs</p>";
+        }
+        else if ($_GET["error"] == "wronglogin") {
+          echo "<p>L'email ou le mot de passe est incorrect</p>";
+        }
+      }
+    ?>
     </section>
 
     

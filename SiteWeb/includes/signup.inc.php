@@ -9,8 +9,7 @@ if (isset($_POST["submit"])) {
   require_once 'dbh.inc.php';
   require_once 'functions.inc.php';
 
-  // Errors messages
-
+  // Errors Messages
 
   // Empty Input 
   if (emptyInputSignup($email, $pwd, $pwdRepeat) !== false) {
@@ -31,7 +30,7 @@ if (isset($_POST["submit"])) {
   }
 
   // Email already exists
-  if (emailExists($conn, $email) !== false) {
+  if (userEmailExists($conn, $email) !== false) {
     header("location: ../../../front/src/pages/signup.php?error=emailalreadyexists");
     exit();
   }

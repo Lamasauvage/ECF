@@ -5,4 +5,8 @@ $dBUsername = "root";
 $dBPassword = "";
 $dBName = "ecf";
 
-$conn = 
+$conn = ($serverName, $dBUsername, $dBPassword, $dBName);
+
+if (!conn) {
+  die("Connection failed: " . mysq);
+}

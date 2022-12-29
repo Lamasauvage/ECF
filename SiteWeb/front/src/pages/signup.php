@@ -6,7 +6,8 @@
     <section class="signup-form">
       <h2>Création de compte</h2>
       <div class="signup-form-form">
-        <form action="signup.inc.php" method="POST">
+        <form action="includes/signup.inc.php" method="POST">
+
           <label for="email"><b>Email</b></label>
           <input type="text" name="email" placeholder="Email">
 
@@ -18,6 +19,7 @@
 
           <button type="submit" name="submit">Créer un compte</button>
           <button type="reset">Annuler</button>
+          
         </form>
       </div>
     </section>

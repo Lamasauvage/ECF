@@ -6,7 +6,7 @@
     <section class="signup-form">
       <h2>Connexion</h2>
 
-      <form action="login.inc.php" method="POST">
+      <form action="includes/login.inc.php" method="POST">
         <label for="email"><b>Email</b></label>
         <input type="text" name="email" placeholder="Email">
 

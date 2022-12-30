@@ -10,6 +10,8 @@
       }
 
   ?>
+  
+<!-- Banner image -->
 
   <div class="banner-image">LE QUAI ANTIQUE</div>
 

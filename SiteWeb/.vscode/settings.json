@@ -6,12 +6,12 @@
       },
       "previewLimit": 50,
       "server": "localhost",
-      "port": 3307,
-      "driver": "MariaDB",
-      "database": "ecf",
-      "name": "Database",
-      "username": "admin",
-      "password": "admin"
+      "port": 3308,
+      "driver": "MySQL",
+      "name": "db1",
+      "database": "MyDB",
+      "username": "root",
+      "password": "root"
     }
   ]
 }

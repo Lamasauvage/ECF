@@ -1,0 +1,8 @@
+MYSQL CREDENTIAL
+user : root
+password : password
+port : 3308
+
+DATABASE " db1 "
+user : root
+(password : password)

@@ -3,7 +3,7 @@
 if (isset($_POST['submit'])) {
   
   $newFileName = $_POST['filename'];
-  if (empty($_POST['filename'])) {
+  if (empty('newFileName')) {
     $newFileName = "gallery";
   } else {
     $newFileName = strtolower(str_replace(" ", "-", $newFileName));
@@ -26,9 +26,9 @@ if (isset($_POST['submit'])) {
 
   if (in_array($fileActualExt, $allowed)) {
     if ($fileError === 0) {
-      if ($fileSize > 20000) {
+      if ($fileSize < 20000) {
         $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
-        $fileDestination = "../img/gallery" . $imageFullName;
+        $fileDestination = "../img/gallery/" . $imageFullName;
 
         include_once "../includes/dbh.inc.php";
 
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
 
             $sql = "INSERT INTO gallery (titleGallery, descriptionGallery, imgFullNameGallery, orderGallery) VALUES (?, ?, ?, ?);";
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-              echo "SQL statement failed";
+              echo "Echec à la connexion SQL";
             } else {
               mysqli_stmt_bind_param($stmt, "ssss", $imageTitle, $imageDescription, $imageFullName, $setImageOrder);
               mysqli_stmt_execute($stmt);

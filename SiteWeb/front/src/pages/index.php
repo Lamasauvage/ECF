@@ -1,5 +1,6 @@
 <!-- Header + Navbar -->
 <?php include_once '../templates/header.php'; ?>
+
 <style>
 <?php include "../../../css/style.css"; ?>
 </style>
@@ -8,9 +9,8 @@
     if (isset($_SESSION["useruid"])) {
       echo "<p>Bonjour " . $_SESSION["useruid"] . "</p>";
       }
-
   ?>
-  
+
 <!-- Banner image -->
 
   <div class="banner-image">LE QUAI ANTIQUE</div>

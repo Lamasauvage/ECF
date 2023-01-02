@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
 
-    <!-- CSS -->
-    <link href="../../../css/style.css" rel="stylesheet">
-
-
   </head>
 
   <body>

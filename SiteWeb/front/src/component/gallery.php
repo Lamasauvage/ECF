@@ -1,3 +1,12 @@
+<?php
+  // session_start();
+  // define('EMAIL_ADMIN', 'admin@example.com');
+
+  // // Vérifiez si l'utilisateur est l'administrateur
+  // $is_admin = $_SESSION['email'] === EMAIL_ADMIN;
+  ?>
+
+
 <?php 
   $_SESSION['email'] = "Admin";
   ?>
@@ -8,7 +17,7 @@
 
     <div class="gallery-container">
       <?php
-      include_once 'includes/dbh.inc.php';
+      include_once '../../../includes/dbh.inc.php';
 
       $sql = "SELECT * FROM gallery ORDER BY orderGallery DESC";
       $stmt = mysqli_stmt_init($conn);

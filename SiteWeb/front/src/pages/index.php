@@ -16,6 +16,9 @@
   <div class="banner-image">LE QUAI ANTIQUE</div>
 
 <!-- Gallery -->
+
 <?php include_once '../component/gallery.php'; ?>
+
+<!-- Footer -->
 
 <?php include_once '../templates/footer.php'; ?>

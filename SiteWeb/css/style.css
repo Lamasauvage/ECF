@@ -100,44 +100,60 @@
 
 /* FORMULAIRE */
 
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  margin: auto;
+.signup-form h2 {
+  font-size: 1.5em;
+  text-align: center;
+  color: #333;
+  margin-bottom: 0.5em;
 }
 
-.signup-form input,
-.signup-form select,
-.signup-form textarea {
+.signup-form-form {
+  width: 30%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.signup-form-form input[type="text"],
+.signup-form-form input[type="password"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
 }
 
-.signup-form input[type="submit"] {
-  background-color: #4caf50;
+.signup-form-form button[type="submit"],
+.signup-form-form button[type="reset"] {
+  width: 100%;
+  background-color: #4c8caf;
   color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.signup-form input[type="submit"]:hover {
-  background-color: #45a049;
+.signup-form-form button[type="submit"]:hover,
+.signup-form-form button[type="reset"]:hover {
+  background-color: #0e3b54;
 }
+
 
 /* FOOTER */
 
 footer {
+  display: flex;
+  justify-content: center;
   background-color: #B6AC97;
   color: #392C1E;
+
 }
 
 footer p {
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 10px;
   font-size: 1.2em;

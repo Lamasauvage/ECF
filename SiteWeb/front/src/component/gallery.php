@@ -47,6 +47,7 @@
         <input type="text" name="filedesc" placeholder="Description...">
         <input type="file" name="file">
         <button type="submit" name="submit">Envoyer</button>
+        <button type="submit" name="delete">Supprimer</button>
       </form>
     </div>';
     }

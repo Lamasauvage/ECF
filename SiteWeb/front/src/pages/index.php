@@ -1,3 +1,4 @@
+
 <!-- Header + Navbar -->
 <?php include_once '../templates/header.php'; ?>
 
@@ -13,7 +14,9 @@
 
 <!-- Banner image -->
 
-  <div class="banner-image">LE QUAI ANTIQUE</div>
+  <div class="banner-image">
+    <h1>LE QUAI ANTIQUE</h1>
+  </div>
 
 <!-- Gallery -->
 

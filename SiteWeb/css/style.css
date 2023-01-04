@@ -73,7 +73,7 @@
 }
 
 .gallery-container a {
-  width: 300px;
+  width: 500px;
   margin: 20px 10px 0;
 }
 
@@ -83,7 +83,7 @@
 
 .gallery-container a div {
   width: 100%;
-  height: 300px;
+  height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -137,6 +137,48 @@
 
 .signup-form-form button[type="submit"]:hover,
 .signup-form-form button[type="reset"]:hover {
+  background-color: #392C1E;
+}
+
+/* LOGIN PAGE */
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+}
+
+.signup-form form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.signup-form form label {
+  margin-bottom: 10px;
+}
+
+.signup-form form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-form form button {
+  padding: 10px;
+  background-color: #B6AC97;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.signup-form form button:hover {
   background-color: #392C1E;
 }
 

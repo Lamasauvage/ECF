@@ -75,6 +75,7 @@
 .gallery-container a {
   width: 500px;
   margin: 20px 10px 0;
+  text-decoration: none;
 }
 
 .gallery-container a:hover {
@@ -94,6 +95,10 @@
   font-size: 20px;
   font-weight: 700;
   color: #111;
+}
+
+.gallery-container a p {
+  color: #000;
 }
 
 

@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
 
               move_uploaded_file($fileTempName, $fileDestination);
 
-              header("location: /../../front/src/pages/index.php?upload=success");
+              header("location: /../../../../front/src/pages/index.php?upload=success");
             }
           }
         }

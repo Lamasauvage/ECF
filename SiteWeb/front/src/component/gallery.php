@@ -49,14 +49,13 @@
         <input type="file" name="file">
         <button type="submit" name="submit">Envoyer</button>
       </form>
-      
+
       <h2>Delete image from Database</h2>
       <form method="post" action="../../../includes/deleteImage.inc.php">
         <label for="image_id">Entrez l\'ID de l\'image à supprimer :</label><br>
         <input type="text" id="id" name="id"><br>
         <input type="submit" value="Supprimer l\'image">
-      </form>
-';
+      </form>';
     }
 
     ?>

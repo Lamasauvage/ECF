@@ -10,6 +10,14 @@ if (isset($_POST['submit']) || true) {
   // Récupération de l'ID de l'image à supprimer
   $id = $_POST['id'];
 
+  // Requête SQL pour récupérer le nom du fichier associé à l'ID de l'image
+  $sql = "SELECT imgFullNameGallery FROM gallery WHERE idGallery='$id'";
+  $result = mysqli_query($conn, $sql);
+
+  // Récupération du nom du fichier
+  $row = mysqli_fetch_assoc($result);
+  $fileName = $row['imgFullNameGallery'];
+
   // Requête SQL pour supprimer l'image de la base de données
   $sql = "DELETE FROM gallery WHERE idGallery='$id'";
   $result = mysqli_query($conn, $sql);

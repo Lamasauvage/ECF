@@ -31,7 +31,7 @@
           echo '<a href="#">
             <div style="background-image:
             url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
-            <h3>'.$row["titleGallery"].'</h3>
+            <h3>'.$row["titleGallery"].' ('.$row["idGallery"].')</h3>
             <p>'.$row["descriptionGallery"].'</p>
             </a>';
           }
@@ -48,10 +48,17 @@
         <input type="text" name="filedesc" placeholder="Description...">
         <input type="file" name="file">
         <button type="submit" name="submit">Envoyer</button>
-        <button type="submit" name="delete">Supprimer</button>
       </form>
-    </div>';
+      
+      <h2>Delete image from Database</h2>
+      <form method="post" action="../../../includes/deleteImage.inc.php">
+        <label for="image_id">Entrez l\'ID de l\'image à supprimer :</label><br>
+        <input type="text" id="id" name="id"><br>
+        <input type="submit" value="Supprimer l\'image">
+      </form>
+';
     }
+
     ?>
 
   </section>

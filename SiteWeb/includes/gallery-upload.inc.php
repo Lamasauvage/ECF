@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 
   if (in_array($fileActualExt, $allowed)) {
     if ($fileError === 0) {
-      if ($fileSize < 2000000) {
+      if ($fileSize < 20000000) {
         $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
         $fileDestination = "../img/gallery/" . $imageFullName;
 
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
 
               move_uploaded_file($fileTempName, $fileDestination);
 
-              header("location: ../../../front/src/pages/index.php?upload=success");
+              header("location: /../../front/src/pages/index.php?upload=success");
             }
           }
         }
@@ -71,5 +71,4 @@ if (isset($_POST['submit'])) {
     echo "Extension de fichier non reconnu";
     exit();
   }
-
 }

@@ -7,7 +7,7 @@
   ?>
 
 
-<?php 
+<?php
   $_SESSION['email'] = "Admin";
   ?>
 

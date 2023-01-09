@@ -36,6 +36,29 @@ if (isset($_POST['submit'])) {
           header("Location: ../../../front/src/component/gallery.php?upload=empty");
           exit();
         } else {
+
+          // Récupérer tous les enregistrements de la table gallery et les trier par ordre croissant d'ID
+          $sql = "SELECT * FROM gallery ORDER BY idGallery ASC";
+          $result = mysqli_query($conn, $sql);
+
+          // Initialiser le compteur d'enregistrements
+          $count = 0;
+
+          // Parcourir chaque enregistrement de la table
+          while ($row = mysqli_fetch_assoc($result)) {
+            // Vérifier si l'ID de l'enregistrement actuel est égal à l'ID attendu
+            if ($row['idGallery'] != $count + 1) {
+              // Mettre à jour l'ID de l'enregistrement actuel avec l'ID attendu
+              $id = $row['idGallery'];
+              $newId = $count + 1;
+              $sql = "UPDATE gallery SET idGallery = $newId WHERE idGallery = $id";
+              mysqli_query($conn, $sql);
+            }
+            // Incrémenter le compteur d'enregistrements
+            $count++;
+          }
+
+          // Récupérer le nombre d'enregistrements de la table
           $sql = "SELECT * FROM gallery;";
           $stmt = mysqli_stmt_init($conn);
           if (!mysqli_stmt_prepare($stmt, $sql)) {

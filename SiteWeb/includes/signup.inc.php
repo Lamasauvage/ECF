@@ -11,27 +11,27 @@ if (isset($_POST["submit"])) {
 
   // Errors Messages
 
-  // Empty Input 
+  // Empty Input
   if (emptyInputSignup($email, $pwd, $pwdRepeat) !== false) {
-    header("location: ../../../front/src/pages/signup.php?error=emptyinput");
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=emptyinput");
     exit();
   }
 
   // Invalid Email
   if (invalidEmail($email) !== false) {
-    header("location: ../../../front/src/pages/signup.php?error=invalidemail");
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=invalidemail");
     exit();
   }
 
   // Password does not match
   if (pwdMatch($pwd, $pwdRepeat) !== false) {
-    header("location: ../../../front/src/pages/signup.php?error=passwordsdontmatch");
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=passwordsdontmatch");
     exit();
   }
 
   // Email already exists
   if (userEmailExists($conn, $email) !== false) {
-    header("location: ../../../front/src/pages/signup.php?error=emailalreadyexists");
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=emailalreadyexists");
     exit();
   }
 
@@ -40,6 +40,6 @@ if (isset($_POST["submit"])) {
 }
 
 else {
-  header("location: ../../../front/src/pages/signup.php");
+  header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php");
   exit();
 }

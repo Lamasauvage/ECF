@@ -23,12 +23,18 @@ if(isset($_FILES['plats_upload'])){
     }
 }
 
-$file = fopen('../excel/plats_upload.csv', "r");
+$file = fopen('../../../excel/plats_upload.csv', "r");
+$header = fgetcsv($file);
+$categorie = ["entrée", "plat", "dessert"];
 while (($data = fgetcsv($file)) !== FALSE) {
-    $query = "INSERT INTO dishes(col1, col2, col3, col4) values('$data[0]','$data[1]','$data[2]','$data[4]'))";
-    mysqli_query($conn, $query);
+   if (in_array(strtolower($data[3]), $categorie)) {
+        $query = "INSERT INTO dishes (titre, description, prix, categories) values('$data[0]','$data[1]','$data[2]','$data[3]')";
+        $result = mysqli_query($conn, $query);
+   }
 }
+
 fclose($file);
+
 
 
 

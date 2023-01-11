@@ -6,7 +6,7 @@
     <section class="signup-form">
       <h2>Création de compte</h2>
       <div class="signup-form-form">
-        <form action="../../../includes/signup.inc.php" method="POST">
+        <form action="http://localhost/STUDI/ECF/SiteWeb/includes/signup.inc.php" method="POST">
 
           <label for="email"><b>Email</b></label>
           <input type="text" name="email" placeholder="Email">
@@ -15,7 +15,7 @@
           <input type="password" name="pwd" placeholder="Mot de passe">
 
           <label for="password"><b>Confirmation du mot de passe</b></label>
-          <input type="password" name="pwdrepeat" placeholder="Mot de passe">
+          <input type="password" name="pwdRepeat" placeholder="Mot de passe">
 
           <button type="submit" name="submit">Créer un compte</button>
           <button type="reset">Annuler</button>

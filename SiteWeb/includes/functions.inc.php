@@ -31,7 +31,7 @@ function pwdMatch($pwd, $pwdRepeat) {
 
 // Function Email Already Exists (check the usersEmail in the DB)
 function userEmailExists($conn, $email) {
- $sql = "SELECT * FROM users WHERE usersEmail = ?;";
+ $sql = "SELECT * FROM users WHERE Email = ?;";
  $stmt = mysqli_stmt_init($conn);
  if (!mysqli_stmt_prepare($stmt, $sql)) {
   header("location: ../../../front/src/pages/signup.php?error=stmtfailed");
@@ -57,7 +57,7 @@ function userEmailExists($conn, $email) {
 
 // Function Create a new user
 function createUser($conn, $email, $pwd) {
-  $sql = "INSERT INTO users (usersEmail, usersPwd) VALUES (?, ?);";
+  $sql = "INSERT INTO users (email, password) VALUES (?, ?);";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
    header("location: ../../../front/src/pages/signup.php?error=stmtfailed");
@@ -71,7 +71,7 @@ function createUser($conn, $email, $pwd) {
   mysqli_stmt_bind_param($stmt, "ss", $email, $hashedPwd);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
-  header("location: ../../../front/src/pages/signup.php?error=none");
+  header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=none");
   exit();
 
  }

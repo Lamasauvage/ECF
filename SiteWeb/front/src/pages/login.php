@@ -14,6 +14,9 @@
         <input type="password" name="pwd" placeholder="Mot de passe">
 
         <button type="submit" name="submit">Connexion</button>
+        <p>Vous n'avez pas encore de compte ?
+          <a href="../pages/signup.php">S'inscrire</a>
+        </p>
       </form>
 
       <?php

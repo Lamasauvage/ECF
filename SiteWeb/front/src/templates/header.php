@@ -32,6 +32,9 @@
               <a class="nav-link" href="../pages/carte.php">Notre carte</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="../pages/menu.php">Nos menus</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="../pages/booking.php">Réserver</a>
             </li>
 

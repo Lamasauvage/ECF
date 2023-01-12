@@ -34,7 +34,7 @@ function userEmailExists($conn, $email) {
  $sql = "SELECT * FROM users WHERE Email = ?;";
  $stmt = mysqli_stmt_init($conn);
  if (!mysqli_stmt_prepare($stmt, $sql)) {
-  header("location: ../../../front/src/pages/signup.php?error=stmtfailed");
+  header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=stmtfailed");
   exit();
  }
 
@@ -60,7 +60,7 @@ function createUser($conn, $email, $pwd) {
   $sql = "INSERT INTO users (email, password) VALUES (?, ?);";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
-   header("location: ../../../front/src/pages/signup.php?error=stmtfailed");
+   header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=stmtfailed");
    exit();
   }
  
@@ -78,7 +78,7 @@ function createUser($conn, $email, $pwd) {
 
  // LOGIN PAGE
 
- function emptyInputLogin($email, $pwd,) {
+ function emptyInputLogin($email, $pwd) {
   $result = false;
   if (empty($email) || empty($pwd)) {
     $result = true;
@@ -89,27 +89,26 @@ function createUser($conn, $email, $pwd) {
 // LOGIN USER
 
 function loginUser($conn, $email, $pwd) {
-  $userEmailExists = userEmailExists($conn, $email);
+  $user = userEmailExists($conn, $email);
 
-  if ($userEmailExists === false) {
-    header("location: ../../../front/src/pages/login.php?error=wronglogin");
+  if ($user === false) {
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/login.php?error=wronglogin");
     exit();
   }
 
 // PASSWORD CHECK
 
-  $pwdHashed = $userEmailExists["usersPwd"];
+  $pwdHashed = $user["password"];
   $checkPwd = password_verify($pwd, $pwdHashed);
 
   if ($checkPwd === false) {
-    header("location: ../../../front/src/pages/login.php?error=wronglogin");
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/login.php?error=wrongpassword");
     exit();
   }
   else if ($checkPwd === true) {
     session_start();
-    $_SESSION["userid"] = $userEmailExists["usersId"];
-    $_SESSION["useruid"] = $userEmailExists["userEmail"];
-    header("location: ../../../front/src/pages/index.php");
+    $_SESSION["user_id"] = $user["id"];
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php?connection=success");
     exit();
   }
 }

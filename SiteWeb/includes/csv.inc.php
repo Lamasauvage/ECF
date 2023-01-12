@@ -23,18 +23,30 @@ if(isset($_FILES['plats_upload'])){
     }
 }
 
-$file = fopen('../../../excel/plats_upload.csv', "r");
+$file = fopen('http://localhost/STUDI/ECF/SiteWeb/excel/plats_upload.csv', "r");
 $header = fgetcsv($file);
-$categorie = ["entrée", "plat", "dessert"];
+$categories = ["entree", "plat", "dessert"];
 while (($data = fgetcsv($file)) !== FALSE) {
-   if (in_array(strtolower($data[3]), $categorie)) {
-        $query = "INSERT INTO dishes (titre, description, prix, categories) values('$data[0]','$data[1]','$data[2]','$data[3]')";
-        $result = mysqli_query($conn, $query);
-   }
+    var_dump($data);
+    if (in_array(strtolower($data[0]), $categories)) {
+        $titre = mysqli_real_escape_string($conn, $data[0]);
+        $description = mysqli_real_escape_string($conn, $data[1]);
+        $prix = mysqli_real_escape_string($conn, $data[2]);
+        $categorie = mysqli_real_escape_string($conn, $data[3]);
+        $sql = "INSERT INTO dishes (titre, description, prix,categorie) VALUES ('$titre', '$description', '$prix', '$categorie')";
+        $result = mysqli_query($conn, $sql);
+    }
 }
 
 fclose($file);
 
+if ($result) {
+    echo "Les données ont été importées avec succès.";
+} else {
+    echo "Il y a eu une erreur lors de l'import des données.";
+}
+
+ 
 
 
 

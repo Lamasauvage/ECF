@@ -7,8 +7,8 @@
 </style>
 
   <?php 
-    if (isset($_SESSION["useruid"])) {
-      echo "<p>Bonjour " . $_SESSION["useruid"] . "</p>";
+    if (isset($_SESSION["user_id"])) {
+      echo "<p>Bonjour " . $_SESSION["user_id"] . "</p>";
       }
   ?>
 

@@ -2,7 +2,7 @@
 
 if (isset($_POST["submit"])) {
 
-  $email = $_POST["uid"];
+  $email = $_POST["email"];
   $pwd = $_POST["pwd"];
 
   require_once 'dbh.inc.php';
@@ -12,7 +12,7 @@ if (isset($_POST["submit"])) {
 
   // Empty Input
   if (emptyInputLogin($email, $pwd) !== false) {
-    header("location: ../../../front/src/pages/login.php?error=emptyinput");
+    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/login.php?error=emptyinput");
     exit();
   }
 
@@ -21,6 +21,6 @@ if (isset($_POST["submit"])) {
   loginUser($conn, $email, $pwd);
 }
 else {
-  header("location: ../../../front/src/pages/login.php");
+  header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/login.php?");
   exit();
 }

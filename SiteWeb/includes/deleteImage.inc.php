@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
   // Suppression de l'image du serveur
   unlink("../img/gallery/$filename");
-  echo $filename;
+  header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php?upload=success");
   echo "Image supprimée avec succès!";
 } else {
   echo "Erreur lors de la suppression de l'image.";

@@ -1,4 +1,3 @@
-
 <!-- Header + Navbar -->
 <?php include_once '../templates/header.php'; ?>
 
@@ -8,7 +7,7 @@
 
   <?php 
     if (isset($_SESSION["user_id"])) {
-      echo "<p>Bonjour " . $_SESSION["user_id"] . "</p>";
+      echo "<p>Bonjour " . $_SESSION["email"] . "</p>";
       }
   ?>
 

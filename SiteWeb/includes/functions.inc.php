@@ -107,7 +107,9 @@ function loginUser($conn, $email, $pwd) {
   }
   else if ($checkPwd === true) {
     session_start();
-    $_SESSION["user_id"] = $user["id"];
+    var_dump($user);
+    $_SESSION["user_id"] = $user["ID"];
+    $_SESSION["email"] = $user["email"];
     header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php?connection=success");
     exit();
   }

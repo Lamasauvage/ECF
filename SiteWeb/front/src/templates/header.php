@@ -39,7 +39,7 @@
             </li>
 
             <?php
-              if (isset($_SESSION["useruid"])) {
+              if (isset($_SESSION["user_id"])) {
               echo "<li><a href='../pages/profile.php'>Profil</a></li> ";
               echo "<li><a href='../../../includes/logout.inc.php'>Déconnection</a></li>";
               }

@@ -1,7 +1,3 @@
-<?php 
-  $_SESSION['email'] = "Admin";
-?>
-
 <?php
 
 

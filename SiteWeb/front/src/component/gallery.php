@@ -6,11 +6,6 @@
   // $is_admin = $_SESSION['email'] === EMAIL_ADMIN;
   ?>
 
-
-<?php
-  $_SESSION['email'] = "Admin";
-  ?>
-
 <section class="gallery-links">
   <div class="wrapper">
     <h2>Gallery</h2>

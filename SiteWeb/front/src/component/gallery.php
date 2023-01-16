@@ -8,7 +8,7 @@
 
 <section class="gallery-links">
   <div class="wrapper">
-    <h2>Gallery</h2>
+    <h2>Gallerie</h2>
 
     <div class="gallery-container">
       <?php
@@ -31,7 +31,7 @@
                     <p>'.$row["descriptionGallery"].'</p>
                     </a>';
           }
-        }else{
+        } else {
           while ($row = mysqli_fetch_assoc($result)) {
                   echo '<a href="#">
                     <div style="background-image:
@@ -43,6 +43,7 @@
         }
       }
       ?>
+
     </div>
 
     <?php
@@ -56,15 +57,12 @@
         <button type="submit" name="submit">Envoyer</button>
       </form>
 
-      <h2>Delete image from Database</h2>
       <form method="post" action="../../../includes/deleteImage.inc.php">
         <label for="image_id">Entrez l\'ID de l\'image à supprimer :</label><br>
-        <input type="text" id="id" name="id"><br>
+        <input type="text" id="id" name="id" placeholder="(1)"><br>
         <input type="submit" value="Supprimer l\'image">
       </form>';
     }
 
     ?>
-
   </section>
-

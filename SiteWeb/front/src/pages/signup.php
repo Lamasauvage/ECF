@@ -24,7 +24,7 @@
       </div>
       <?php
 
-      // DISPLAY ERROR MESSAGES
+    // Error Messages 
 
       if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {

@@ -8,7 +8,7 @@
 
 .navbar {
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
@@ -16,7 +16,7 @@
 
 
 .nav-link {
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 22px;
 }
@@ -29,7 +29,8 @@
 /* BANNER IMAGE */
 
 .banner-image {
-  background-image: url(../../../img/resto.jpg);
+  background-image: url(http://localhost/STUDI/ECF/SiteWeb/img/restaurant.jpg);
+  z-index: -1;
   display: flex;
   background-size: cover;
   height: 125vh;
@@ -48,6 +49,14 @@
   height: 100px;
   width: 100px;
   border-radius: 180%;
+}
+
+/* TEXT BETWEEN */
+
+#text-between {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
 }
 
 /* GALLERY */

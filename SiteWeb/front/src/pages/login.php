@@ -21,8 +21,6 @@
 
       <?php
 
-      // DISPLAY ERROR MESSAGES
-
       if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
           echo "<p>Veuillez renseigner tous les champs</p>";

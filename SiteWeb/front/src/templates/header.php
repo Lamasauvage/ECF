@@ -29,10 +29,10 @@
               <a class="nav-link" href="../pages/index.php">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/carte.php">Notre carte</a>
+              <a class="nav-link" href="../pages/carte.php">Carte</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/menu.php">Nos menus</a>
+              <a class="nav-link" href="../pages/menu.php">Menus</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../pages/booking.php">Réserver</a>
@@ -40,12 +40,12 @@
 
             <?php
               if (isset($_SESSION["user_id"])) {
-              echo "<li><a href='../pages/profile.php'>Profil</a></li> ";
-              echo "<li><a href='../../../includes/logout.inc.php'>Déconnection</a></li>";
+              echo "<li class='nav-item'><a class='nav-link' href='http://localhost/STUDI/ECF/SiteWeb/front/src/pages/profil.php'>Profil</a></li> ";
+              echo "<li class='nav-item'><a class='nav-link' href='../../../includes/logout.inc.php'>Déconnection</a></li>";
               }
               else {
-              echo "<li><a href='../pages/signup.php'>Inscription</a></li> ";
-              echo "<li><a href='../pages/login.php'>Se connecter </a></li>";
+              echo "<li class='nav-item'><a class='nav-link' href='../pages/signup.php'>Inscription</a></li> ";
+              echo "<li class='nav-item'><a class='nav-link' href='../pages/login.php'>Se connecter </a></li>";
               }
             ?> 
           </ul>

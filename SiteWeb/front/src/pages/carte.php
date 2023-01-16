@@ -1,3 +1,7 @@
+<?php include_once '../templates/header.php'; ?>
+<style>
+<?php include "../../../css/style.css"; ?>
+</style>
 
 <form action="../../../includes/csv.inc.php" method="post" enctype="multipart/form-data">
     <input type="file" name="plats_upload">
@@ -7,12 +11,6 @@
 
 
 <table>
-  <tr>
-    <th>col1</th>
-    <th>col2</th>
-    <th>col3</th>
-    <th>col4</th>
-  </tr>
   <?php
   include_once '../../../includes/csv.inc.php';
 

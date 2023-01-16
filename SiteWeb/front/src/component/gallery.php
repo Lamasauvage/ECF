@@ -1,10 +1,10 @@
 <?php
-  // session_start();
-  // define('EMAIL_ADMIN', 'admin@example.com');
+  if(isset($_SESSION['email'])) {
+    $is_admin = $_SESSION['email'] == 'admin@localhost.com';
+  }  
+    ?>
 
-  // // Vérifiez si l'utilisateur est l'administrateur
-  // $is_admin = $_SESSION['email'] === EMAIL_ADMIN;
-  ?>
+  
 
 <section class="gallery-links">
   <div class="wrapper">
@@ -22,20 +22,31 @@
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo '<a href="#">
-            <div style="background-image:
-            url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
-            <h3>'.$row["titleGallery"].' ('.$row["idGallery"].')</h3>
-            <p>'.$row["descriptionGallery"].'</p>
-            </a>';
+        if(isset($_SESSION['email']) && $_SESSION['email'] == $is_admin) {
+          while ($row = mysqli_fetch_assoc($result)) {
+                  echo '<a href="#">
+                    <div style="background-image:
+                    url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
+                    <h3>'.$row["titleGallery"].' ('.$row["idGallery"].')</h3>
+                    <p>'.$row["descriptionGallery"].'</p>
+                    </a>';
+          }
+        }else{
+          while ($row = mysqli_fetch_assoc($result)) {
+                  echo '<a href="#">
+                    <div style="background-image:
+                    url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
+                    <h3>'.$row["titleGallery"].'</h3>
+                    <p>'.$row["descriptionGallery"].'</p>
+                    </a>';
           }
         }
+      }
       ?>
     </div>
 
     <?php
-    if(isset($_SESSION['email'])) {
+    if(isset($_SESSION['email']) && $_SESSION['email'] == $is_admin) {
       echo '<div class="gallery-upload">
       <form action="../../../includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
         <input type="text" name="filename" placeholder="Nom du fichier...">

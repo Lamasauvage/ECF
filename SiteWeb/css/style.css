@@ -71,7 +71,11 @@
   font-weight: 600;
   color: #111;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
 }
+
 
 .gallery-container {
   display: flex;
@@ -200,52 +204,30 @@
 /* FOOTER */
 
 footer {
-  display: flex;
-  justify-content: center;
-  background-color: #B6AC97;
-  color: #392C1E;
-
-}
-
-footer p {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-footer form {
-  margin: 0;
+  background-color: #f1f1f1;
   padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
 }
 
-footer label {
-  display: block;
-  margin: 10px 0;
-  font-size: 1em;
-  font-weight: bold;
+footer h2 {
+  margin-bottom: 20px;
 }
 
-footer input[type="time"] {
+footer .day-hours {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .day-hours label {
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+footer .day-hours input[type="time"] {
   width: 80px;
-  margin: 0 10px;
-  padding: 5px;
-  border: 1px solid #392C1E;
-  font-size: 1em;
-}
-
-footer input[type="submit"] {
-  margin: 20px 0;
-  padding: 10px 20px;
-  border: none;
-  background-color: #392C1E;
-  color: #fff;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-footer input[type="submit"]:hover {
-  background-color: #2A1B0D;
 }

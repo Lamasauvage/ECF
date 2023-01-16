@@ -1,10 +1,8 @@
 <?php
   if(isset($_SESSION['email'])) {
     $is_admin = $_SESSION['email'] == 'admin@localhost.com';
-  }  
+  }
     ?>
-
-  
 
 <section class="gallery-links">
   <div class="wrapper">

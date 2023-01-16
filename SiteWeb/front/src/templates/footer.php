@@ -1,45 +1,26 @@
   </body>
-  
   <footer>
-    <p>Nos horaires d'ouverture</p>
-    <form action="update-hours.php" method="post">
-      <label for="monday-open">Lundi :</label>
-      <input type="time" id="monday-open" name="monday-open">
-      <input type="time" id="monday-close" name="monday-close">
-      <br>
+    <!-- FORMULAIRE POUR L'ADMIN ONLY -->
+    <?php include_once '../component/adminUpdateHours.php'; ?>
 
-      <label for="tuesday-open">Mardi :</label>
-      <input type="time" id="tuesday-open" name="tuesday-open">
-      <input type="time" id="tuesday-close" name="tuesday-close">
-      <br>
+    <!-- Horaire d'ouverture visible par tout le monde -->
+    <?php
+    include_once '../../../includes/dbh.inc.php';
 
-      <label for="wednesday-open">Mercredi :</label>
-      <input type="time" id="wednesday-open" name="wednesday-open">
-      <input type="time" id="wednesday-close" name="wednesday-close">
-      <br>
+    $query = "SELECT * FROM restauranthours";
+    $result = mysqli_query($conn, $query);
 
-      <label for="monday-open">Jeudi :</label>
-      <input type="time" id="thursday-open" name="thursday-open">
-      <input type="time" id="thursday-close" name="thursday-close">
-      <br>
+    while ($row = mysqli_fetch_assoc($result)) {
+        $mondayOpen = $row['mondayOpen'];
+        $mondayClose = $row['mondayClose'];
+    }
+?>
 
-      <label for="monday-open">Vendredi :</label>
-      <input type="time" id="friday-open" name="friday-open">
-      <input type="time" id="friday-close" name="friday-close">
-      <br>
-
-      <label for="monday-open">Samedi :</label>
-      <input type="time" id="saturday-open" name="saturday-open">
-      <input type="time" id="saturday-close" name="saturday-close">
-      <br>
-
-      <label for="monday-open">Dimanche :</label>
-      <input type="time" id="sunday-open" name="sunday-open">
-      <input type="time" id="sunday-close" name="sunday-close">
-      <br>
-
-      <input type="submit" value="Enregistrer les modifications">
-    </form>
+<form>
+    <label for="mondayOpen">Lundi :</label>
+    <input type="time" id="mondayOpen" name="mondayOpen" value="<?php echo $mondayOpen; ?>">
+    <input type="time" id="mondayClose" name="mondayClose" value="<?php echo $mondayClose; ?>">
+</form>
 
   </footer>
 </html>

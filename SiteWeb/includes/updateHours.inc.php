@@ -34,20 +34,29 @@ $days = array(
     'Sunday' => array('morning' => array('open' => $_POST['sundayOpenMorning'], 'close' => $_POST['sundayCloseMorning']),
                       'evening' => array('open' => $_POST['sundayOpenEvening'], 'close' => $_POST['sundayCloseEvening'])),
 );
-
+// var_dump($_POST);
 foreach ($days as $day => $hours) {
     $openMorning = $hours['morning']['open'];
     $closeMorning = $hours['morning']['close'];
     $openEvening = $hours['evening']['open'];
     $closeEvening = $hours['evening']['close'];
 
-    $query = "UPDATE restauranthours SET open_morning='$openMorning', close_morning='$closeMorning', open_evening='$openEvening', close_evening='$closeEvening' WHERE day='$day'";
+    $query = "SELECT * FROM restauranthours WHERE day='$day'";
+    $result = mysqli_query($conn, $query);
+    $row_count = mysqli_num_rows($result);
 
-$result = mysqli_query($conn, $query);
-
+    if ($row_count == 0) {
+        // INSERT
+        $query = "INSERT INTO restauranthours (day, open_morning, close_morning, open_evening, close_evening) VALUES ('$day', '$open_morning', '$close_morning', '$open_evening', '$close_evening')";
+    } else {
+        // UPDATE
+        $query = "UPDATE restauranthours SET open_morning='$openMorning', close_morning='$closeMorning', open_evening='$openEvening', close_evening='$closeEvening' WHERE day='$day'";  
+    }
+    $result = mysqli_query($conn, $query);
 }
 
+
 header("Location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php");
-exit();
 mysqli_close($conn);
+
 

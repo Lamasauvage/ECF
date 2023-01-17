@@ -19,7 +19,8 @@
       $openEvening = $row['open_evening'];
       $closeEvening = $row['close_evening'];
     
-      echo "<p>$day: de " . date("H:i", strtotime($openMorning)) . " à " . date("H:i", strtotime($closeMorning)) . "</p>";
+      echo "<p>$day : " . date("H:i", strtotime($openMorning)) . " - " . date("H:i", strtotime($closeMorning)) . "</p>";
+      echo "<p>" . date("H:i", strtotime($openEvening)) . " - " . date("H:i", strtotime($closeEvening)) . "</p>";
     }
     mysqli_close($conn); ?>
   </footer>

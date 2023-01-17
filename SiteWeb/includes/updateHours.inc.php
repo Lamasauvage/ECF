@@ -5,6 +5,7 @@
     close_morning TIME NOT NULL,
     open_evening TIME NOT NULL,
     close_evening TIME NOT NULL,
+    status TINYINT NOT NULL
 ); -->
 
 
@@ -34,12 +35,18 @@ $days = array(
     'Sunday' => array('morning' => array('open' => $_POST['sundayOpenMorning'], 'close' => $_POST['sundayCloseMorning']),
                       'evening' => array('open' => $_POST['sundayOpenEvening'], 'close' => $_POST['sundayCloseEvening'])),
 );
-// var_dump($_POST);
-foreach ($days as $day => $hours) {
-    $openMorning = $hours['morning']['open'];
-    $closeMorning = $hours['morning']['close'];
-    $openEvening = $hours['evening']['open'];
-    $closeEvening = $hours['evening']['close'];
+
+// Condition pour éviter d'écraser les données non modifié 
+
+    foreach ($days as $day => $hours) {
+        $openMorning = (!empty($hours['morning']['open'])) ? $hours['morning']['open'] : false;
+        $closeMorning = (!empty($hours['morning']['close'])) ? $hours['morning']['close'] : false;
+        $openEvening = (!empty($hours['evening']['open'])) ? $hours['evening']['open'] : false;
+        $closeEvening = (!empty($hours['evening']['close'])) ? $hours['evening']['close'] : false;
+
+        if ($openMorning === false && $closeMorning === false && $openEvening === false && $closeEvening === false) {
+            continue;
+        }
 
     $query = "SELECT * FROM restauranthours WHERE day='$day'";
     $result = mysqli_query($conn, $query);

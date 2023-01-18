@@ -26,7 +26,7 @@
         <input type="time" id="tuesdayOpenEvening" name="tuesdayOpenEvening">
         <input type="time" id="tuesdayCloseEvening" name="tuesdayCloseEvening">
         </div>
-        <select id="mondayStatus" name="mondayStatus">
+        <select id="tuesdayStatus" name="tuesdayStatus">
         <option value="1">Ouvert</option>
         <option value="0">Fermé</option>
         </select>
@@ -41,7 +41,7 @@
         <input type="time" id="wednesdayOpenEvening" name="wednesdayOpenEvening">
         <input type="time" id="wednesdayCloseEvening" name="wednesdayCloseEvening">
         </div>
-        <select id="mondayStatus" name="mondayStatus">
+        <select id="wednesdayStatus" name="wednesdayStatus">
         <option value="1">Ouvert</option>
         <option value="0">Fermé</option>
         </select>
@@ -53,10 +53,10 @@
         <input type="time" id="thursdayCloseMorning" name="thursdayCloseMorning">
         </div>
         <div class="day-hours">
-        <input type="time" id="thursdayyOpenEvening" name="thursdayOpenEvening">
+        <input type="time" id="thursdayOpenEvening" name="thursdayOpenEvening">
         <input type="time" id="thursdayCloseEvening" name="thursdayCloseEvening">
         </div>
-        <select id="mondayStatus" name="mondayStatus">
+        <select id="thursdayStatus" name="thursdayStatus">
         <option value="1">Ouvert</option>
         <option value="0">Fermé</option>
         </select>
@@ -71,7 +71,7 @@
         <input type="time" id="fridayOpenEvening" name="fridayOpenEvening">
         <input type="time" id="fridayCloseEvening" name="fridayCloseEvening">
         </div>
-        <select id="mondayStatus" name="mondayStatus">
+        <select id="fridayStatus" name="fridayStatus">
         <option value="1">Ouvert</option>
         <option value="0">Fermé</option>
         </select>
@@ -86,7 +86,7 @@
         <input type="time" id="saturdayOpenEvening" name="saturdayOpenEvening">
         <input type="time" id="saturdayCloseEvening" name="saturdayCloseEvening">
         </div>
-        <select id="mondayStatus" name="mondayStatus">
+        <select id="saturdayStatus" name="saturdayStatus">
         <option value="1">Ouvert</option>
         <option value="0">Fermé</option>
         </select>
@@ -101,7 +101,7 @@
         <input type="time" id="sundayOpenEvening" name="sundayOpenEvening">
         <input type="time" id="sundayCloseEvening" name="sundayCloseEvening">
         </div>
-        <select id="mondayStatus" name="mondayStatus">
+        <select id="sundayStatus" name="sundayStatus">
         <option value="1">Ouvert</option>
         <option value="0">Fermé</option>
         </select>

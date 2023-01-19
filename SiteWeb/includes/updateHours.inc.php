@@ -17,7 +17,7 @@ $days = array(
     'Monday' => array('morning' => array('open' => $_POST['mondayOpenMorning'], 'close' => $_POST['mondayCloseMorning']),
                       'evening' => array('open' => $_POST['mondayOpenEvening'], 'close' => $_POST['mondayCloseEvening']),
                       'status' => $_POST['mondayStatus']),
-                      
+
     'Tuesday' => array('morning' => array('open' => $_POST['tuesdayOpenMorning'], 'close' => $_POST['tuesdayCloseMorning']),
                         'evening' => array('open' => $_POST['tuesdayOpenEvening'], 'close' => $_POST['tuesdayCloseEvening']),
                         'status' => $_POST['tuesdayStatus']),
@@ -44,35 +44,42 @@ $days = array(
 
 );
 
-// Condition pour éviter d'écraser les données non modifié 
+// Condition pour éviter d'écraser les données non modifié
 
     foreach ($days as $day => $hours) {
+
+        // Check if morning & evening hours have been filled in
         $openMorning = (!empty($hours['morning']['open'])) ? $hours['morning']['open'] : false;
         $closeMorning = (!empty($hours['morning']['close'])) ? $hours['morning']['close'] : false;
         $openEvening = (!empty($hours['evening']['open'])) ? $hours['evening']['open'] : false;
         $closeEvening = (!empty($hours['evening']['close'])) ? $hours['evening']['close'] : false;
         $status = (isset($hours['status']) && ($hours['status'] == 0 || $hours['status'] == 1)) ? $hours['status'] : 1;
 
+        $query = "SELECT * FROM restauranthours WHERE day='$day'";
+        $result = mysqli_query($conn, $query);
+        $row_count = mysqli_num_rows($result);
+
+        // Check if status has been filled in & if it's valide (0/1)
+        if ($status == 0) {
+            if ($row_count > 0) {
+                $query = "UPDATE restauranthours SET status='$status' WHERE day='$day'";
+                $result = mysqli_query($conn, $query);
+            }
+            continue;
+        }
         if ($openMorning === false && $closeMorning === false && $openEvening === false && $closeEvening === false) {
             continue;
         }
-
-    $query = "SELECT * FROM restauranthours WHERE day='$day'";
-    $result = mysqli_query($conn, $query);
-    $row_count = mysqli_num_rows($result);
-    if ($status == 0) {
-        continue;
-    }
-    if ($row_count == 0) {
-        // INSERT
-        $query = "INSERT INTO restauranthours (day, open_morning, close_morning, open_evening, close_evening, status) VALUES ('$day', '$open_morning', '$close_morning', '$open_evening', '$close_evening', '$status')";
-    } else {
-        // UPDATE
+        if ($row_count == 0) {
+            // INSERT
+            $query = "INSERT INTO restauranthours (day, open_morning, close_morning, open_evening, close_evening, status) VALUES ('$day', '$openMorning', '$closeMorning', '$openEvening', '$closeEvening', '$status')";
+        } else {
+            // UPDATE
             $query = "UPDATE restauranthours SET open_morning='$openMorning', close_morning='$closeMorning', open_evening='$openEvening', close_evening='$closeEvening', status='$status' WHERE day='$day'";
-            var_dump($query);  
+        }
+        $result = mysqli_query($conn, $query);
     }
-    $result = mysqli_query($conn, $query);
-}
+
 
 
 header("Location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php");

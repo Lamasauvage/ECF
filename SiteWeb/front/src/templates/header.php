@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if(isset($_SESSION['email'])) {
+    $is_admin = $_SESSION['email'] == 'admin@localhost.com';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -40,14 +43,16 @@
 
             <?php
               if (isset($_SESSION["user_id"])) {
-              echo "<li class='nav-item'><a class='nav-link' href='http://localhost/STUDI/ECF/SiteWeb/front/src/pages/profil.php'>Profil</a></li> ";
-              echo "<li class='nav-item'><a class='nav-link' href='../../../includes/logout.inc.php'>Déconnection</a></li>";
-              }
-              else {
+                if ($is_admin) {
+                  echo "<li class='nav-item'><a class='nav-link' href='http://localhost/STUDI/ECF/SiteWeb/front/src/pages/admin.php'>ADMIN</a></li> ";
+                }
+                echo "<li class='nav-item'><a class='nav-link' href='../../../includes/logout.inc.php'>Déconnection</a></li>";
+              } else {
               echo "<li class='nav-item'><a class='nav-link' href='../pages/signup.php'>Inscription</a></li> ";
               echo "<li class='nav-item'><a class='nav-link' href='../pages/login.php'>Se connecter </a></li>";
               }
-            ?> 
+
+            ?>
           </ul>
         </div>
       </div>

@@ -4,4 +4,4 @@
 <?php include "../../../css/style.css"; ?>
 </style>
 
-<?php include_once '../../../includes/booking.inc.php';
+<?php include_once '../component/bookingTable.php';

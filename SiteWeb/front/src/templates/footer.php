@@ -4,6 +4,7 @@
     <?php include_once '../component/adminUpdateHours.php'; ?>
 
     <!-- Horaire d'ouverture visible par tout le monde -->
+    <h2>Nos horaires d'ouverture</h2>
     <?php 
     include_once '../../../includes/dbh.inc.php';
 

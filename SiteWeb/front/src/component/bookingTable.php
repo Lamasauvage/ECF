@@ -71,22 +71,55 @@ select.addEventListener("change", function(){
   <label for="allergy">Avez-vous des allergies alimentaires ?</label>
   <select name="allergy" id="allergy">
     <option value=""></option>
-    <option value="allergy-yes">Oui</option>
-    <option value="allergy-no">Non</option>
+    <option value="yes">Oui</option>
+    <option value="no">Non</option>
   </select>
-  <input type="text" id="allergy-yes" name="allergy-yes" style="display:none">
+</form>
+
+<form id="allergy-form" style="display:none;">
+  <label for="allergy-type">Précisez le type d'allergie:</label>
+  <select name="allergy-type" id="allergy-type">
+    <option value=""></option>
+    <option value="gluten">Gluten</option>
+    <option value="lait">Lait</option>
+    <option value="eggs">Oeufs</option>
+    <option value="peanut">Arachide</option>
+    <option value="nuts">Fruit à coque</option>
+    <option value="seafood">Fruit de la mer</option>
+    <option value="mollusc">Mollusques</option>
+    <option value="fish">Poissons</option>
+    <option value="celery">Céleri</option>
+    <option value="soja">Soja</option>
+    <option value="sesame">Sésame</option>
+    <option value="lupin">Lupin</option>
+    <option value="sulfite">Sulfites</option>
+    <option value="other-allergy">Autres</option>
+  </select>
+  <input type="text" id="other-allergy" name="other-allergy" style="display:none">
 </form>
 
 <script>
 let select2 = document.getElementById("allergy");
-let input2 = document.getElementById("allgery-yes");
+let form = document.getElementById("allergy-form");
+let allergyType = document.getElementById("allergy-type");
+let allergyOther = document.getElementById("other-allergy");
+
 select2.addEventListener("change", function(){
-  if(select.value === "allgery-yes"){
-    input2.style.display = "inline-block";
+  if(select2.value === "yes"){
+    form.style.display = "block";
   } else {
-    input2.style.display = "none";
+    form.style.display = "none";
   }
 });
+
+allergyType.addEventListener("change", function(){
+  if(allergyType.value === "other-allergy"){
+    allergyOther.style.display = "block";
+  } else {
+    allergyOther.style.display = "none";
+  }
+});
+
 </script>
 
 <button>Réserver</button>
@@ -94,12 +127,14 @@ select2.addEventListener("change", function(){
 
 
 <!-- FOR ADMIN -->
-
-<form action="http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php" method="post">
-  <label for="table_count">Nombre de tables disponibles:</label>
-  <input type="number" id="table_count" name="table_count" min="0">
-  <input type="submit" value="Envoyer">
-</form>
+<div>
+  <h2>POUR ADMIN ONLY</h2>
+  <form action="http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php" method="post">
+    <label for="table_count">Nombre de tables disponibles:</label>
+    <input type="number" id="table_count" name="table_count" min="0" style="width:50px">
+    <input type="submit" value="Envoyer">
+  </form>
+</div>
 
 
 <script type="text/javascript" src="http://localhost/STUDI/ECF/SiteWeb/js/jquery/jquery.js"></script>

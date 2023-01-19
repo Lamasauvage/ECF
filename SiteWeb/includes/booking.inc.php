@@ -1,12 +1,14 @@
 <?php
 session_start();
 
+include_once '../includes/dbh.inc.php';
+
 if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@localhost.com') {
 
   $new_value = $_POST['table_count'];
 
   if (!empty($new_value) && is_numeric($new_value)) {
-  include_once '../includes/dbh.inc.php';
+
 
   $select_query = "SELECT * FROM tables";
   $result = mysqli_query($conn, $select_query);
@@ -27,4 +29,8 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@localhost.com') {
     echo "La valeur envoyée n'est pas valide. Veuillez entrer un nombre.";
   }
 }
+
+// AFFICHER LES MESSAGES (NE FONCTIONNE PAS)
+
+header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/booking.php");
 $conn->close();

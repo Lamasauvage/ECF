@@ -5,6 +5,7 @@
   description TEXT NOT NULL,
   price DECIMAL(10,2) NOT NULL,
   image VARCHAR(255) NOT NULL
+);
  -->
 
 <?php

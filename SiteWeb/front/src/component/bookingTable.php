@@ -20,15 +20,37 @@ CREATE TABLE booking (
 
 
  <!-- JQUERY FOR DATE PICKER -->
-
- <link rel="stylesheet" href="http://localhost/STUDI/ECF/SiteWeb/js/jquery/jquery-ui.css">
-<link rel="stylesheet" href="http://localhost/STUDI/ECF/SiteWeb/js/jquery/jquery-stucture.css">
-<link rel="stylesheet" href="http://localhost/STUDI/ECF/SiteWeb/js/jquery/jquery-ui.theme.css">
-
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 <!-- Calendar -->
 
+
+
 <div id="mydiv"></div>
+
+<script>
+  $("#mydiv").datepicker({
+    onSelect: function(date) {
+      $.ajax({
+        url: '../../../includes/booking.inc.php',
+        type: 'POST',
+        data: {selected_date: date},
+        success: function (response) {
+          $('#available-times').html(response);
+        }
+      })
+    }
+  })
+</script>
+
+
+<script>
+  $("#mydiv").datepicker();
+</script>
+
 
 <!-- Form to indicate the number of covers -->
 
@@ -77,7 +99,7 @@ select.addEventListener("change", function(){
 </form>
 
 <form id="allergy-form" style="display:none;">
-  <label for="allergy-type">Précisez le type d'allergie:</label>
+  <label for="allergy-type">Préciser le type d'allergie :</label>
   <select name="allergy-type" id="allergy-type">
     <option value=""></option>
     <option value="gluten">Gluten</option>
@@ -135,11 +157,3 @@ allergyType.addEventListener("change", function(){
     <input type="submit" value="Envoyer">
   </form>
 </div>
-
-
-<script type="text/javascript" src="http://localhost/STUDI/ECF/SiteWeb/js/jquery/jquery.js"></script>
-<script type="text/javascript" src="http://localhost/STUDI/ECF/SiteWeb/js/jquery/jquery-ui.js"></script>
-
-<script>
-    $("#mydiv").datepicker();
-</script>

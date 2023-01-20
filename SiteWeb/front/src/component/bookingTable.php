@@ -61,96 +61,70 @@ jQuery(function($){
 
 <!-- Calendar -->
 
+
 <div id="datePicker"></div>
+<select id="booking_slots"></select>
 
 <script>
-  $(document).ready(function() {
+$(document).ready(function() {
     $('#datePicker').datepicker({
-      onSelect: function(dateText) {
-      if(dateText){
-        console.log("A date is selected: " + dateText);
-        $.ajax({
-            type: 'GET',
-            url: 'http://localhost/STUDI/ECF/SiteWeb/front/src/component/bookingTable.php',
-            data: { date: dateText },
-            dataType: 'text',
+      
+        onSelect: function(dateText) {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost/STUDI/ECF/SiteWeb/front/src/component/bookingTable.php',
+                data: { date: dateText },
+                dataType: 'json',
                 success: function(data) {
-                console.log("Ajax call success: " + data);
-                var select = $("#booking_slots");
-                select.empty();
-                for (var i = 0; i < data.length; i++) {
-                    select.append("<option value='" + data[i] + "'>" + data[i] + "</option>");
+                    var select = $("#booking_slots");
+                    select.empty();
+                    for (var i = 0; i < data.length; i++) {
+                        select.append("<option value='" + data[i] + "'>" + data[i] + "</option>");
                     }
                 },
-              });
-        }}
+            });
+        }
     });
-  });
+});
 </script>
+
 
 <?php
 
 include_once '../../../includes/dbh.inc.php';
-if(isset($_GET['date'])) {
-  $date_arr = explode("/", $_GET['date']);
-  if(!checkdate($date_arr[1], $date_arr[0], $date_arr[2])){
-      echo "Invalid date selected";
-      exit();
-  }
-  $date = date("Y-m-d", strtotime($_GET['date']));
-} else {
-  echo "Please select a date!!";
-  exit();
-}
+
+$date = date("Y-m-d", strtotime(str_replace('/', '-', $_GET['date'])));
 
 
-// Retrieve the booked slots for the selected date
-$query = "SELECT time FROM booking WHERE date = '$date'";
-$result = mysqli_query($conn, $query);
-$booked_slots = array();
-while ($row = mysqli_fetch_assoc($result)) {
-    $booked_slots[] = $row['time'];
-}
-
-// Retrieve the opening and closing hours for the selected date
-$query = "SELECT open_morning, close_evening FROM restauranthours WHERE day = DAYNAME('".date("Y-m-d", strtotime($date))."')";
+$query = "SELECT open_morning, close_evening FROM restauranthours WHERE day = DAYNAME('$date')";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 $open_time = $row['open_morning'];
 $close_time = $row['close_evening'];
 
-// Initialize an array to store the available slots
-$available_slots = array();
+$query = "SELECT available FROM tables";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+$available_tables = $row['available'];
 
-// Iterate through the hours of the day
+$available_slots = array();
 
 $open_time = strtotime($open_time);
 $close_time = strtotime($close_time);
-for ($time = $open_time; $time < $close_time - 1; $time = strtotime("+15 minutes", $time)) {
-    // Check if the current hour is available
-    if (!in_array($time, $booked_slots)) {
-        // Check if there are any available tables
-        $query = "SELECT available FROM tables";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        if ($row['available'] > 0) {
-            $available_slots[] = date("H:i:s", $time);
-        }
+for ($time = $open_time; $time <= $close_time - 1; $time = strtotime("+15 minutes", $time)) {
+    $slot = date("H:i:s", $time);
+    if ($available_tables > 0) {
+        $available_slots[] = $slot;
+    } else {
+        $available_slots[] = $slot . " (Booked)";
     }
 }
 
-
-// Return the available slots as a PHP array
 header('Content-Type: application/json');
 echo json_encode($available_slots);
 mysqli_close($conn);
-?>
 
-<form>
-<?php
-foreach($available_slots as $slot) {
-    echo "<button type='submit' name='booking_slot' value='$slot'>$slot</button>";
-}
+
 ?>
 </form>
 

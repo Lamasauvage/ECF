@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include_once '../includes/dbh.inc.php';
 
@@ -36,6 +35,5 @@ if (isset($_SESSION['email']) && $_SESSION['email'] == 'admin@localhost.com') {
 header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/booking.php");
 $conn->close();
 
-// ----------------------------------------  
 
 

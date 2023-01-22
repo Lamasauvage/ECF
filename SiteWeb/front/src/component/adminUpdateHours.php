@@ -8,7 +8,6 @@
 
     echo '<h2>Formulaire mise à jour des horaires du restaurant</h2>
         <form action="http://localhost/STUDI/ECF/SiteWeb/includes/updateHours.inc.php" method="post">
-
             <!-- LUNDI -->
             <div class="day-hours">
             <label for="mondayOpenMorning">Lundi :</label>
@@ -23,7 +22,6 @@
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <!-- MARDI -->
             <div class="day-hours">
             <label for="tuesdayOpenMorning">Mardi :</label>
@@ -38,7 +36,6 @@
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <!-- MERCREDI -->
             <div class="day-hours">
             <label for="wednesdayOpenMorning">Mercredi :</label>
@@ -53,7 +50,6 @@
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <!-- JEUDI -->
             <div class="day-hours">
             <label for="thursdayOpenMorning">Jeudi :</label>
@@ -68,7 +64,6 @@
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <!-- VENDREDI -->
             <div class="day-hours">
             <label for="fridayOpenMorning">Vendredi :</label>
@@ -83,7 +78,6 @@
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <!-- SAMEDI -->
             <div class="day-hours">
             <label for="saturdayOpenMorning">Samedi :</label>
@@ -98,7 +92,6 @@
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <!-- DIMANCHE -->
             <div class="day-hours">
             <label for="sundayOpenMorning">Dimanche :</label>
@@ -113,7 +106,6 @@
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <input type="submit" value="UpdateHours">
             </form>';
     }

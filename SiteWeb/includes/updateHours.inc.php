@@ -83,5 +83,3 @@ $days = array(
 
 header("Location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php");
 mysqli_close($conn);
-
-

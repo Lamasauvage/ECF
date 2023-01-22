@@ -1,4 +1,5 @@
 <!-- Header + Navbar -->
+
 <?php include_once '../templates/header.php'; ?>
 <style>
 <?php include "../../../css/style.css"; ?>
@@ -6,6 +7,7 @@
 
 <?php 
 include_once '../component/bookingTable.php';
+include_once '../../../js/calendar.php';
 
 
 

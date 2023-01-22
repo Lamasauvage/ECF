@@ -71,3 +71,4 @@ jQuery(function($){
 </script>
 
 <div id="available_slots"></div>
+

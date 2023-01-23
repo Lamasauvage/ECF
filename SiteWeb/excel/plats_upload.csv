@@ -1,4 +1,17 @@
-Titre,Description,Prix,Categorie
-Burger,Un burger,13,plat
-Pizza,Une pizza saumon,14,plat
-Fois gras,du fois gras,12,entrÃ©e
+title;description;price;categorie
+Fondue savoyarde;Fromage fondu servi avec du pain et des pommes de terre;15.50;plat
+Crozets aux 4 fromages;Petites pâtes de sarrasin aux 4 fromages;12.50;plat
+Tarte aux myrtilles;Tarte aux myrtilles servie avec de la crème fraîche;8.50;dessert
+Tartiflette;Gratin de pommes de terre, reblochon, oignons et lardons;14.00;plat
+Raclette;Une demi-roue de fromage fondu servie avec des pommes de terre et des cornichons;30.00;plat
+Gratin dauphinois;Gratin de pommes de terre à la crème et au fromage;12.00;plat
+Potée savoyarde;Ragoût à base de pommes de terre, de lard et de divers légumes;16.50;plat
+Croûte aux morilles;Sauce crémeuse aux champignons servie sur du pain grillé;12.50;entree
+Fondue de poireaux;Fondue de poireaux servie avec des croûtons;8.00;entree
+Gâteau de Savoie;Gâteau éponge à la texture légère et aérée;7.50;dessert
+Galette des Rois;Pâte traditionnelle française à base de pâte feuilletée et de frangipane;9.50;dessert
+Tarte aux noix;Tarte aux noix à la croûte feuilletée;8.50;dessert
+Rognons à la moutarde;Rognons de veau à la crème de moutarde;21.50;plat
+Soupe à l'oignon;Soupe à l'oignon avec gruyère et croûtons;8.50;entree
+Bavette à l'échalote;Bavette de bœuf au beurre d'échalote;19.50;plat
+Crème brûlée;Crème pâtissière avec un dessus en sucre caramélisé;8.00;dessert

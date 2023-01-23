@@ -2,14 +2,17 @@
 
 // SIGNUP PAGE
 
-// Function Empty Input Signup
-function emptyInputSignup($email, $pwd, $pwdRepeat) {
+function emptyInputSignup($email, $pwd, $pwdRepeat, $guests, $allergy, $allergy_type = '') {
   $result = false;
-  if (empty($email) || empty($pwd) || empty($pwdRepeat)) {
+  if (empty($email) || empty($pwd) || empty($pwdRepeat) || empty($guests) || empty($allergy) ) {
+    $result = true;
+  }else if ($allergy === "yes" && (empty($allergy_type) || $allergy_type === "other-allergy" && empty($_POST["other-allergy"]))) {
     $result = true;
   }
   return $result;
 }
+
+
 
 // Function Invalid Email
 function invalidEmail($email) {
@@ -54,27 +57,26 @@ function userEmailExists($conn, $email) {
  mysqli_stmt_close($stmt);
 }
 
-
 // Function Create a new user
-function createUser($conn, $email, $pwd) {
-  $sql = "INSERT INTO users (email, password) VALUES (?, ?);";
+function createUser($conn, $email, $pwd, $pwdRepeat, $guests, $allergy, $allergy_type) {
+  if ($allergy_type === 'other-allergy') {
+    $allergy_type = $_POST['other-allergy'];
+  }
+  $sql = "INSERT INTO users (email, password, guests, allergy, allergy_type) VALUES (?, ?, ?, ?, ?);";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
    header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=stmtfailed");
    exit();
   }
- 
+  $allergy = ($allergy === 'yes') ? 1 : 0;
   $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-
-
-  mysqli_stmt_bind_param($stmt, "ss", $email, $hashedPwd);
+  mysqli_stmt_bind_param($stmt, "ssiss", $email, $hashedPwd, $guests, $allergy, $allergy_type);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
   header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=none");
   exit();
+}
 
- }
 
  // LOGIN PAGE
 

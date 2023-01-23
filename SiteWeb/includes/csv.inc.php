@@ -1,16 +1,6 @@
-<!--
- CREATE TABLE plats (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(255) NOT NULL,
-  description TEXT NOT NULL,
-  price DECIMAL(10,2) NOT NULL,
-  image VARCHAR(255) NOT NULL
-);
- -->
-
 <?php
 
-require_once 'dbh.inc.php';
+include_once 'dbh.inc.php';
 
 if(isset($_FILES['plats_upload'])){
     $file = $_FILES['plats_upload'];
@@ -24,17 +14,17 @@ if(isset($_FILES['plats_upload'])){
     }
 }
 
-$file = fopen('http://localhost/STUDI/ECF/SiteWeb/excel/plats_upload.csv', "r");
+$file = fopen('http://localhost/STUDI/ECF/SiteWeb/excel/plats_upload.csv',"rb");
 $header = fgetcsv($file);
-$categories = ["entrée", "plat", "dessert"];
+$categories = ["entree", "plat", "dessert"];
 while (($data = fgetcsv($file)) !== FALSE) {
     $currentCategory = strtolower($data[3]);
     if (in_array($currentCategory, $categories)) {
-        $titre = mysqli_real_escape_string($conn, $data[0]);
+        $title = mysqli_real_escape_string($conn, $data[0]);
         $description = mysqli_real_escape_string($conn, $data[1]);
         $price = mysqli_real_escape_string($conn, $data[2]);
         $currentCategory = mysqli_real_escape_string($conn, $currentCategory);
-        $sql = "INSERT INTO dishes (title, description, price, categorie) VALUES ('$titre', '$description', '$price', '$currentCategory')";
+        $sql = "INSERT INTO dishes (title, description, price, categorie) VALUES ('$title', '$description', '$price', '$currentCategory')";
         $result = mysqli_query($conn, $sql);
     }
 }
@@ -46,7 +36,6 @@ if ($result) {
 }
 
 fclose($file);
-
 
 
 

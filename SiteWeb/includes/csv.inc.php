@@ -17,7 +17,7 @@ if(isset($_FILES['plats_upload'])){
 $file = fopen('http://localhost/STUDI/ECF/SiteWeb/excel/plats_upload.csv',"rb");
 $header = fgetcsv($file);
 $categories = ["entree", "plat", "dessert"];
-while (($data = fgetcsv($file)) !== FALSE) {
+while (($data = fgetcsv($file, null, ';')) !== FALSE) {
     $currentCategory = strtolower($data[3]);
     if (in_array($currentCategory, $categories)) {
         $title = mysqli_real_escape_string($conn, $data[0]);

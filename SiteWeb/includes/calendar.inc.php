@@ -2,21 +2,28 @@
 
 include_once '../includes/dbh.inc.php';
 
-if(isset($_GET['date'])) {
-  $date_arr = explode("/", $_GET['date']);
-  if(!checkdate($date_arr[1], $date_arr[0], $date_arr[2])){
-      echo "Date invalide";
-      exit();
-  }
-  $date = date("d/m/Y", strtotime($_GET['date']));
-} else {
-  echo "Merci de choisir une date";
-  exit();
-}
+// if(isset($_GET['date'])) {
+//   $date_arr = explode("/", $_GET['date']);
+//   if(!checkdate($date_arr[1], $date_arr[0], $date_arr[2])){
+//       echo "Date invalide";
+//       exit();
+//   }
+//   $date = date("d/m/Y", strtotime($_GET['date']));
+// } else {
+//   echo "Merci de choisir une date";
+//   exit();
+// }
 
+$frDates = ['Monday' => 'Lundi', 'Tuesday' => 'Mardi', 'Wednesday' => 'Mercredi', 'Thursday' => 'Jeudi', 'Friday' => 'Vendredi', 'Saturday' => 'Samedi', 'Sunday' => 'Dimanche'];
+
+$date = $_GET['date'];
+$date = str_replace('/', '-', $date);
+$timestamp = strtotime($date);
+$date = $frDates[date('l', $timestamp)];
+$formattedDate = date('Y-m-d', $timestamp);
 
 // Retrieve the booked slots for the selected date
-$query = "SELECT time FROM booking WHERE date = '" . date('Y-m-d', strtotime($date)) . "'";
+$query = "SELECT time FROM booking WHERE date = '" . $formattedDate . "';";
 $result = mysqli_query($conn, $query);
 $booked_slots = array();
 while ($row = mysqli_fetch_assoc($result)) {
@@ -24,7 +31,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 // Retrieve the opening and closing hours for the selected date
-$query = "SELECT open_morning, close_morning, open_evening, close_evening, status FROM restauranthours WHERE day = DAYNAME('" . date('Y-m-d', strtotime($date)) . "')";
+$query = "SELECT open_morning, close_morning, open_evening, close_evening, status FROM restauranthours WHERE day = '" . $date . "';";
 
 $result = mysqli_query($conn, $query);
 if($result){
@@ -34,8 +41,8 @@ if($result){
   $open_time_evening = strtotime($row['open_evening']);
   $close_time_evening = strtotime($row['close_evening']);
   $status = $row['status'];
-  if($status == "closed"){
-    echo "Le restaurant est fermé le ".date("l", strtotime($date));
+  if($status == "0"){
+    echo json_encode([]);
     exit();
   }
   

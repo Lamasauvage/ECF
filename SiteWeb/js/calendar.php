@@ -54,16 +54,16 @@ jQuery(function($){
             data: { date: dateText },
             dataType: 'json',
             success: function(data) {
-            console.log("Ajax call success: " + data);
-            var select = $("#booking_slots");
-            select.empty();
-            var available_slots = $('#available_slots');
-            available_slots.empty();
-            for (var i = 0; i < data.length; i++) {
-              select.append("<option value='" + data[i] + "'>" + data[i] + "</option>");
-              available_slots.append("<div>" + data[i] + "</div>");
-              }
-            },
+              console.log("Ajax call success: " + data);
+              var select = $("#booking_slots");
+              select.empty();
+              var available_slots = $('#available_slots');
+              available_slots.empty();
+              for (var i = 0; i < data.length; i++) {
+                select.append("<option value='" + data[i] + "'>" + data[i] + "</option>");
+                available_slots.append("<div>" + data[i] + "</div>");
+                }
+              },
             });
         }}
     });

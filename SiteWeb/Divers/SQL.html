@@ -1,0 +1,44 @@
+        SQL Table for all the tables in the restaurant
+
+CREATE TABLE tables (
+  available INT NOT NULL,
+);
+
+
+        SQL Table for booking a table 
+
+CREATE TABLE booking (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    guest INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+  ); 
+
+
+        SQL Table for store data from the csv file
+
+ CREATE TABLE dishes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+);
+ -->
+
+
+        SQL Table for users
+
+  +--------------+--------------+------+-----+---------+----------------+
+  | Field        | Type         | Null | Key | Default | Extra          |
+  +--------------+--------------+------+-----+---------+----------------+
+  | ID           | int          | NO   | PRI | NULL    | auto_increment |
+  | email        | varchar(255) | NO   |     | NULL    |                |
+  | password     | varchar(255) | NO   |     | NULL    |                |
+  | is_admin     | tinyint(1)   | YES  |     | 0       |                |
+  | guests       | int          | NO   |     | 1       |                |
+  | allergy      | tinyint(1)   | YES  |     | NULL    |                |
+  | allergy_type | varchar(255) | NO   |     |         |                |
+  +--------------+--------------+------+-----+---------+----------------+

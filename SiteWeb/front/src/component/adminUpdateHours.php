@@ -11,116 +11,115 @@
 
             <!-- LUNDI -->
             <div class="day-hours">
-            <label for="mondayOpenMorning">Lundi :</label>
-            <input type="time" id="mondayOpenMorning" name="mondayOpenMorning">
-            <input type="time" id="mondayCloseMorning" name="mondayCloseMorning">
+            <label for="lundiOpenMorning">Lundi :</label>
+            <input type="time" id="lundiOpenMorning" name="lundiOpenMorning">
+            <input type="time" id="lundiCloseMorning" name="lundiCloseMorning">
             </div>
             <div class="day-hours">
-            <input type="time" id="mondayOpenEvening" name="mondayOpenEvening">
-            <input type="time" id="mondayCloseEvening" name="mondayCloseEvening">
+            <input type="time" id="lundiOpenEvening" name="lundiOpenEvening">
+            <input type="time" id="lundiCloseEvening" name="lundiCloseEvening">
             </div>
-            <select id="mondayStatus" name="mondayStatus">
+            <select id="lundiStatus" name="lundiStatus">
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
 
             <!-- MARDI -->
             <div class="day-hours">
-            <label for="tuesdayOpenMorning">Mardi :</label>
-            <input type="time" id="tuesdayOpenMorning" name="tuesdayOpenMorning">
-            <input type="time" id="tuesdayCloseMorning" name="tuesdayCloseMorning">
+            <label for="mardiOpenMorning">Mardi :</label>
+            <input type="time" id="mardiOpenMorning" name="mardiOpenMorning">
+            <input type="time" id="mardiCloseMorning" name="mardiCloseMorning">
             </div>
             <div class="day-hours">
-            <input type="time" id="tuesdayOpenEvening" name="tuesdayOpenEvening">
-            <input type="time" id="tuesdayCloseEvening" name="tuesdayCloseEvening">
+            <input type="time" id="mardiOpenEvening" name="mardiOpenEvening">
+            <input type="time" id="mardiCloseEvening" name="mardiCloseEvening">
             </div>
-            <select id="tuesdayStatus" name="tuesdayStatus">
+            <select id="mardiStatus" name="mardiStatus">
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
 
             <!-- MERCREDI -->
             <div class="day-hours">
-            <label for="wednesdayOpenMorning">Mercredi :</label>
-            <input type="time" id="wednesdayOpenMorning" name="wednesdayOpenMorning">
-            <input type="time" id="wednesdayCloseMorning" name="wednesdayCloseMorning">
+            <label for="mercrediOpenMorning">Mercredi :</label>
+            <input type="time" id="mercrediOpenMorning" name="mercrediOpenMorning">
+            <input type="time" id="mercrediCloseMorning" name="mercrediCloseMorning">
             </div>
             <div class="day-hours">
-            <input type="time" id="wednesdayOpenEvening" name="wednesdayOpenEvening">
-            <input type="time" id="wednesdayCloseEvening" name="wednesdayCloseEvening">
+            <input type="time" id="mercrediOpenEvening" name="mercrediOpenEvening">
+            <input type="time" id="mercrediCloseEvening" name="mercrediCloseEvening">
             </div>
-            <select id="wednesdayStatus" name="wednesdayStatus">
+            <select id="mercrediStatus" name="mercrediStatus">
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
 
             <!-- JEUDI -->
             <div class="day-hours">
-            <label for="thursdayOpenMorning">Jeudi :</label>
-            <input type="time" id="thursdayOpenMorning" name="thursdayOpenMorning">
-            <input type="time" id="thursdayCloseMorning" name="thursdayCloseMorning">
+            <label for="jeudiOpenMorning">Jeudi :</label>
+            <input type="time" id="jeudiOpenMorning" name="jeudiOpenMorning">
+            <input type="time" id="jeudiCloseMorning" name="jeudiCloseMorning">
             </div>
             <div class="day-hours">
-            <input type="time" id="thursdayOpenEvening" name="thursdayOpenEvening">
-            <input type="time" id="thursdayCloseEvening" name="thursdayCloseEvening">
+            <input type="time" id="jeudiOpenEvening" name="jeudiOpenEvening">
+            <input type="time" id="jeudiCloseEvening" name="jeudiCloseEvening">
             </div>
-            <select id="thursdayStatus" name="thursdayStatus">
+            <select id="jeudiStatus" name="jeudiStatus">
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
 
             <!-- VENDREDI -->
             <div class="day-hours">
-            <label for="fridayOpenMorning">Vendredi :</label>
-            <input type="time" id="fridayOpenMorning" name="fridayOpenMorning">
-            <input type="time" id="fridayCloseMorning" name="fridayCloseMorning">
+            <label for="vendrediOpenMorning">Vendredi :</label>
+            <input type="time" id="vendrediOpenMorning" name="vendrediOpenMorning">
+            <input type="time" id="vendrediCloseMorning" name="vendrediCloseMorning">
             </div>
             <div class="day-hours">
-            <input type="time" id="fridayOpenEvening" name="fridayOpenEvening">
-            <input type="time" id="fridayCloseEvening" name="fridayCloseEvening">
+            <input type="time" id="vendrediOpenEvening" name="vendrediOpenEvening">
+            <input type="time" id="vendrediCloseEvening" name="vendrediCloseEvening">
             </div>
-            <select id="fridayStatus" name="fridayStatus">
+            <select id="vendrediStatus" name="vendrediStatus">
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
 
             <!-- SAMEDI -->
             <div class="day-hours">
-            <label for="saturdayOpenMorning">Samedi :</label>
-            <input type="time" id="saturdayOpenMorning" name="saturdayOpenMorning">
-            <input type="time" id="saturdayCloseMorning" name="saturdayCloseMorning">
+            <label for="samediOpenMorning">Samedi :</label>
+            <input type="time" id="samediOpenMorning" name="samediOpenMorning">
+            <input type="time" id="samediCloseMorning" name="samediCloseMorning">
             </div>
             <div class="day-hours">
-            <input type="time" id="saturdayOpenEvening" name="saturdayOpenEvening">
-            <input type="time" id="saturdayCloseEvening" name="saturdayCloseEvening">
+            <input type="time" id="samediOpenEvening" name="samediOpenEvening">
+            <input type="time" id="samediCloseEvening" name="samediCloseEvening">
             </div>
-            <select id="saturdayStatus" name="saturdayStatus">
+            <select id="samediStatus" name="samediStatus">
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
 
             <!-- DIMANCHE -->
             <div class="day-hours">
-            <label for="sundayOpenMorning">Dimanche :</label>
-            <input type="time" id="sundayOpenMorning" name="sundayOpenMorning">
-            <input type="time" id="sundayCloseMorning" name="sundayCloseMorning">
+            <label for="dimancheOpenMorning">Dimanche :</label>
+            <input type="time" id="dimancheOpenMorning" name="dimancheOpenMorning">
+            <input type="time" id="dimancheCloseMorning" name="dimancheCloseMorning">
             </div>
             <div class="day-hours">
-            <input type="time" id="sundayOpenEvening" name="sundayOpenEvening">
-            <input type="time" id="sundayCloseEvening" name="sundayCloseEvening">
+            <input type="time" id="dimancheOpenEvening" name="dimancheOpenEvening">
+            <input type="time" id="dimancheCloseEvening" name="dimancheCloseEvening">
             </div>
-            <select id="sundayStatus" name="sundayStatus">
+            <select id="dimancheStatus" name="dimancheStatus">
             <option value="1">Ouvert</option>
             <option value="0">Fermé</option>
             </select>
-
             <input type="submit" value="UpdateHours">
             </form>';
     }
 ?>
 <h2>Nos horaires d'ouverture</h2>
 <?php
-$days = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+$days = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
 
     foreach ($days as $day) {
       $query = "SELECT open_morning, close_morning, open_evening, close_evening, status FROM restauranthours WHERE day='$day'";

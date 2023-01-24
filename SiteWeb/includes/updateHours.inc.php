@@ -13,33 +13,33 @@
 include_once '../includes/dbh.inc.php';
 
 $days = array(
-    'Monday' => array('morning' => array('open' => $_POST['mondayOpenMorning'], 'close' => $_POST['mondayCloseMorning']),
-                      'evening' => array('open' => $_POST['mondayOpenEvening'], 'close' => $_POST['mondayCloseEvening']),
-                      'status' => $_POST['mondayStatus']),
+    'Lundi' => array('morning' => array('open' => $_POST['lundiOpenMorning'], 'close' => $_POST['lundiCloseMorning']),
+                      'evening' => array('open' => $_POST['lundiOpenEvening'], 'close' => $_POST['lundiCloseEvening']),
+                      'status' => $_POST['lundiStatus']),
 
-    'Tuesday' => array('morning' => array('open' => $_POST['tuesdayOpenMorning'], 'close' => $_POST['tuesdayCloseMorning']),
-                        'evening' => array('open' => $_POST['tuesdayOpenEvening'], 'close' => $_POST['tuesdayCloseEvening']),
-                        'status' => $_POST['tuesdayStatus']),
+    'Mardi' => array('morning' => array('open' => $_POST['mardiOpenMorning'], 'close' => $_POST['mardiCloseMorning']),
+                        'evening' => array('open' => $_POST['mardiOpenEvening'], 'close' => $_POST['mardiCloseEvening']),
+                        'status' => $_POST['mardiStatus']),
 
-    'Wednesday' => array('morning' => array('open' => $_POST['wednesdayOpenMorning'], 'close' => $_POST['wednesdayCloseMorning']),
-                          'evening' => array('open' =>  $_POST['wednesdayOpenEvening'], 'close' => $_POST['wednesdayCloseEvening']),
-                          'status' => $_POST['wednesdayStatus']),
+    'Mercredi' => array('morning' => array('open' => $_POST['mercrediOpenMorning'], 'close' => $_POST['mercrediCloseMorning']),
+                          'evening' => array('open' =>  $_POST['mercrediOpenEvening'], 'close' => $_POST['mercrediCloseEvening']),
+                          'status' => $_POST['mercrediStatus']),
 
-    'Thursday' => array('morning' => array('open' => $_POST['thursdayOpenMorning'], 'close' => $_POST['thursdayCloseMorning']),
-                        'evening' => array('open' => $_POST['thursdayOpenEvening'], 'close' => $_POST['thursdayCloseEvening']),
-                        'status' => $_POST['thursdayStatus']),
+    'Jeudi' => array('morning' => array('open' => $_POST['jeudiOpenMorning'], 'close' => $_POST['jeudiCloseMorning']),
+                        'evening' => array('open' => $_POST['jeudiOpenEvening'], 'close' => $_POST['jeudiCloseEvening']),
+                        'status' => $_POST['jeudiStatus']),
 
-    'Friday' => array('morning' => array('open' => $_POST['fridayOpenMorning'], 'close' => $_POST['fridayCloseMorning']),
-                      'evening' => array('open' => $_POST['fridayOpenEvening'], 'close' => $_POST['fridayCloseEvening']),
-                      'status' => $_POST['fridayStatus']),
+    'Vendredi' => array('morning' => array('open' => $_POST['vendrediOpenMorning'], 'close' => $_POST['vendrediCloseMorning']),
+                      'evening' => array('open' => $_POST['vendrediOpenEvening'], 'close' => $_POST['vendrediCloseEvening']),
+                      'status' => $_POST['vendrediStatus']),
 
-    'Saturday' => array('morning' => array('open' => $_POST['saturdayOpenMorning'], 'close' => $_POST['saturdayCloseMorning']),
-                        'evening' => array('open' => $_POST['saturdayOpenEvening'], 'close' => $_POST['saturdayCloseEvening']),
-                        'status' => $_POST['saturdayStatus']),
+    'Samedi' => array('morning' => array('open' => $_POST['samediOpenMorning'], 'close' => $_POST['samediCloseMorning']),
+                        'evening' => array('open' => $_POST['samediOpenEvening'], 'close' => $_POST['samediCloseEvening']),
+                        'status' => $_POST['samediStatus']),
 
-    'Sunday' => array('morning' => array('open' => $_POST['sundayOpenMorning'], 'close' => $_POST['sundayCloseMorning']),
-                      'evening' => array('open' => $_POST['sundayOpenEvening'], 'close' => $_POST['sundayCloseEvening']),
-                      'status' => $_POST['sundayStatus']),
+    'Dimanche' => array('morning' => array('open' => $_POST['dimancheOpenMorning'], 'close' => $_POST['dimancheCloseMorning']),
+                      'evening' => array('open' => $_POST['dimancheOpenEvening'], 'close' => $_POST['dimancheCloseEvening']),
+                      'status' => $_POST['dimancheStatus']),
 
 );
 
@@ -83,5 +83,3 @@ $days = array(
 
 header("Location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php");
 mysqli_close($conn);
-
-

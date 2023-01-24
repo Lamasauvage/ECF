@@ -2,18 +2,6 @@
 
 include_once '../includes/dbh.inc.php';
 
-// if(isset($_GET['date'])) {
-//   $date_arr = explode("/", $_GET['date']);
-//   if(!checkdate($date_arr[1], $date_arr[0], $date_arr[2])){
-//       echo "Date invalide";
-//       exit();
-//   }
-//   $date = date("d/m/Y", strtotime($_GET['date']));
-// } else {
-//   echo "Merci de choisir une date";
-//   exit();
-// }
-
 $frDates = ['Monday' => 'Lundi', 'Tuesday' => 'Mardi', 'Wednesday' => 'Mercredi', 'Thursday' => 'Jeudi', 'Friday' => 'Vendredi', 'Saturday' => 'Samedi', 'Sunday' => 'Dimanche'];
 
 $date = $_GET['date'];
@@ -41,11 +29,11 @@ if($result){
   $open_time_evening = strtotime($row['open_evening']);
   $close_time_evening = strtotime($row['close_evening']);
   $status = $row['status'];
+  $date = strtolower($date);
   if($status == "0"){
-    echo json_encode([]);
+    echo json_encode(["Le restaurant est fermé le " . $date . ""]);
     exit();
   }
-  
 }else{
   echo "An error occured while fetching the opening and closing hours";
   exit();
@@ -57,26 +45,35 @@ $available_slots = array();
 // Iterate through the hours of the day
 
 for ($time = $open_time_morning; $time <= $close_time_morning; $time = strtotime("+15 minutes", $time)) {
-    if (!in_array($time, $booked_slots)) {
-        $query = "SELECT available FROM tables";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        if ($row['available'] > 0) {
-            $available_slots[] = date("H:i:s", $time);
-        }
+  if (strtotime("+1 hour", $time) > $close_time_morning) {
+      // Skip the iteration or break out of the loop
+      continue;
+  }
+  if (!in_array($time, $booked_slots)) {
+      $query = "SELECT available FROM tables";
+      $result = mysqli_query($conn, $query);
+      $row = mysqli_fetch_assoc($result);
+      if ($row['available'] > 0) {
+          $available_slots[] = date("H:i:s", $time);
       }
-    }
+  }
+}
 
 for ($time = $open_time_evening; $time <= $close_time_evening; $time = strtotime("+15 minutes", $time)) {
-    if (!in_array($time, $booked_slots)) {
-        $query = "SELECT available FROM tables";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        if ($row['available'] > 0) {
-            $available_slots[] = date("H:i:s", $time);
-        }
-    }
+  if (strtotime("+1 hour", $time) > $close_time_evening) {
+      // Skip the iteration or break out of the loop
+      continue;
+  }
+  if (!in_array($time, $booked_slots)) {
+      $query = "SELECT available FROM tables";
+      $result = mysqli_query($conn, $query);
+      $row = mysqli_fetch_assoc($result);
+      if ($row['available'] > 0) {
+          $available_slots[] = date("H:i:s", $time);
+      }
+  }
 }
+
 
 // Return the available slots as a PHP array
 header('Content-Type: application/json');

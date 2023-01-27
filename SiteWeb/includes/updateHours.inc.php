@@ -1,13 +1,3 @@
-<!-- CREATE TABLE restaurantHours (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    day VARCHAR(10) NOT NULL,
-    open_morning TIME NOT NULL,
-    close_morning TIME NOT NULL,
-    open_evening TIME NOT NULL,
-    close_evening TIME NOT NULL,
-    status TINYINT NOT NULL
-); -->
-
 <?php
 
 include_once '../includes/dbh.inc.php';

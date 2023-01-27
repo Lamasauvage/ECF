@@ -231,3 +231,8 @@ footer .day-hours label {
 footer .day-hours input[type="time"] {
   width: 80px;
 }
+
+
+.selected {
+  background-color: #ff0000;
+}

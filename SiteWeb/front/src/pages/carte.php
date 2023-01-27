@@ -3,13 +3,6 @@
 <?php include "../../../css/style.css"; ?>
 </style>
 
-<form action="../../../includes/csv.inc.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="plats_upload">
-    <input type="submit" value="Upload">
-</form>
-
-
-
 <table>
   <?php
   include_once '../../../includes/csv.inc.php';
@@ -26,7 +19,7 @@
     <td><?php echo $row['categorie']; ?></td>
   </tr>
   <?php
-    }
+  }
   }
   ?>
 </table>

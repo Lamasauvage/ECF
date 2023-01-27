@@ -5,7 +5,7 @@
 <?php include "../../../css/style.css"; ?>
 </style>
 
-<?php 
+<?php
 include_once '../../../js/calendar.php';
 include_once '../component/bookingTable.php';
 

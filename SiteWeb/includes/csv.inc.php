@@ -24,16 +24,14 @@ while (($data = fgetcsv($file, null, ';')) !== FALSE) {
         $description = mysqli_real_escape_string($conn, $data[1]);
         $price = mysqli_real_escape_string($conn, $data[2]);
         $currentCategory = mysqli_real_escape_string($conn, $currentCategory);
-        $sql = "INSERT INTO dishes (title, description, price, categorie) VALUES ('$title', '$description', '$price', '$currentCategory')";
-        $result = mysqli_query($conn, $sql);
+        $checkSql = "SELECT * FROM dishes WHERE title = '$title' AND description = '$description' AND price = '$price' AND categorie = '$currentCategory'";
+        $checkResult = mysqli_query($conn, $checkSql);
+        if ($checkResult -> num_rows== 0) { {
+            $sql = "INSERT INTO dishes (title, description, price, categorie) VALUES ('$title', '$description', '$price', '$currentCategory')";
+            $result = mysqli_query($conn, $sql);
+        }
     }
-}
-
-if ($result) {
-    echo "Les données ont été importées avec succès.";
-} else {
-    echo "Il y a eu une erreur lors de l'import des données.";
-}
+}}
 
 fclose($file);
 

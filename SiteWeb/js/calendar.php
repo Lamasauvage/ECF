@@ -1,9 +1,7 @@
 <!-- JQUERY FOR DATE PICKER -->
- 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-
-
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 
 <!-- French localization -->
 <script>
@@ -42,8 +40,6 @@ jQuery(function($){
 
 <div id="datePicker"></div>
 
-
-
 <script>
 $(document).ready(function() {
     $('#datePicker').datepicker({
@@ -63,23 +59,40 @@ $(document).ready(function() {
                         available_slots.empty();
                         for (var i = 0; i < data.length; i++) {
                             select.append("<option value='" + data[i] + "'>" + data[i] + "</option>");
-                            available_slots.append("<div><button class='slot-button'>" + data[i] + "</button></div>");
-                        }
-                        $(document).on('click', '.slot-button', function () {
-                            var hour = $(this).text();
-                            //Ajax call to insert the hour and date in the database
+                            available_slots.append("<div><button class='slot-button'>" + data[i] + "</button></div>");}
+
+                        $('.slot-button').on('click', function() {
+                                $('.slot-button').removeClass('selected');
+                                $(this).addClass('selected');
+                                selectedSlot = $(this).text();
+                                console.log("Selected slot: " + selectedSlot);
+                        });
+
+                        //Ajax call to insert the hour and date in the database
+                        $(document).on('click', '.booking_button', function () {
+                            var date = $('#datePicker').datepicker('getDate');
+                            var time = $('.slot-button.selected').text();
+                            var name = $('#name').val();
+                            var email = $('#email').val();
+                            var phone = $('#phone').val();
+                            var allergy = $('#allergy').val();
+                            var allergy_type = $('#allergy_type').val();
+
                             $.ajax({
                                 type: 'POST',
-                                url: 'http://localhost/STUDI/ECF/SiteWeb/includes/insert_booking.php',
-                                data: {date: dateText, hour: hour},
-                                success: function (response) {
-                                    console.log("Booking added to the database: " + response);
-                                }
+                                url: 'http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php',
+                                data: {date: date, time: time, name: name, email: email, phone: phone, allergy: allergy, allergy_type: allergy_type},
+                                success: function (data) {
+                                    console.log(data);
+                                    if (data == "success") {
+                                        alert("Votre réservation a bien été prise en compte");
+                                        window.location.href = "http://localhost/STUDI/ECF/SiteWeb/index.php";
+                                    } else {
+                                        alert("Une erreur est survenue, veuillez réessayer");
+                                    }
+                                },
                             });
                         });
-                    },
-                    error: function (err) {
-                        console.log("Ajax call failed: " + err);
                     }
                 });
             }

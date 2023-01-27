@@ -11,11 +11,11 @@
   <h1>LE QUAI ANTIQUE</h1>
 </div>
 
-<?php 
+<?php
     if (isset($_SESSION["user_id"])) {
       echo "<p>Bonjour " . $_SESSION["email"] . "</p>";
       }
-  ?>
+?>
 
 <!-- Text -->
 

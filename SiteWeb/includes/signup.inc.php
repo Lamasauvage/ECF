@@ -25,7 +25,6 @@ if (isset($_POST["submit"])) {
   exit();
 }
 
-
   // Invalid Email
   if (invalidEmail($email) !== false) {
     header("location: http://localhost/STUDI/ECF/SiteWeb/front/src/pages/signup.php?error=invalidemail");

@@ -155,9 +155,6 @@ allergyType.addEventListener("change", function(){
 
 </form>
 
-
-
-
 <!-- FOR ADMIN -->
 <div>
   <h2>POUR ADMIN ONLY - NEED TO MOVE TO ADMIN PAGE</h2>

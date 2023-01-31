@@ -236,3 +236,40 @@ footer .day-hours input[type="time"] {
 .selected {
   background-color: #ff0000;
 }
+
+
+/* CARTE */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+.menu-header {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+.category-header {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #f2f2f2;
+}
+.menu-item {
+  font-size: 16px;
+}
+.menu-item-title {
+  font-weight: bold;
+}
+.menu-item-price {
+  float: center;
+}

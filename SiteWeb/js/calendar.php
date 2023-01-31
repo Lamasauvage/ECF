@@ -86,7 +86,7 @@ $(document).ready(function() {
                                     console.log(data);
                                     if (data == "success") {
                                         alert("Votre réservation a bien été prise en compte");
-                                        window.location.href = "http://localhost/STUDI/ECF/SiteWeb/index.php";
+                                        window.location.href = "http://localhost/STUDI/ECF/SiteWeb/front/src/index.php";
                                     } else {
                                         alert("Une erreur est survenue, veuillez réessayer");
                                     }

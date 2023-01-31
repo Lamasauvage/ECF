@@ -33,7 +33,7 @@ $days = array(
 
 );
 
-// Condition pour éviter d'écraser les données non modifié
+// Condition to avoid overwriting unmodified data
 
     foreach ($days as $day => $hours) {
 

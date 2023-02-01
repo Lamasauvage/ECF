@@ -3,6 +3,11 @@
 <?php include "../../../css/style.css"; ?>
 </style>
 
+<!-- Split -->
+
+<div class="split"></div>
+
+<!-- Carte -->
 
 
 <div class="filter">

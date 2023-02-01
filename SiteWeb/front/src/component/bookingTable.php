@@ -154,13 +154,3 @@ allergyType.addEventListener("change", function(){
 <button class="booking_button">Réserver</button>
 
 </form>
-
-<!-- FOR ADMIN -->
-<div>
-  <h2>POUR ADMIN ONLY - NEED TO MOVE TO ADMIN PAGE</h2>
-  <form action="http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php" method="post">
-    <label for="table_count">Nombre de tables disponibles:</label>
-    <input type="number" id="table_count" name="table_count" min="0" style="width:50px">
-    <input type="submit" value="Envoyer">
-  </form>
-</div>

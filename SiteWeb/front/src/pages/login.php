@@ -3,6 +3,12 @@
   <?php include "../../../css/style.css"; ?>
   </style>
 
+  <!-- Split -->
+
+  <div class="split"></div>
+
+  <!-- Sign up -->
+
     <section class="signup-form">
       <h2>Connexion</h2>
 

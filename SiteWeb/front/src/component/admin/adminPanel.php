@@ -1,12 +1,33 @@
 <h1>Admin Panel</h1>
 
+<!-- CARTE -->
+
 <h2>Gérer la carte du restaurant</h2>
 <form action="../../../includes/csv.inc.php" method="post" enctype="multipart/form-data">
 <input type="file" name="plats_upload">
 <input type="submit" value="Upload">
 </form>
 
+<!-- BOOKINGS -->
+
 <h2>Gérer les réservations</h2>
+
+
+
+<!-- TABLES --> 
+
+<h2>Gérer le nombre de tables (MARCHE PAS)</h2>
+<p>Current number of tables: <?php echo $table_count; ?></p>
+  <form action="http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php" method="post">
+    <label for="table_count">Nombre de tables disponibles:</label>
+    <input type="number" id="table_count" name="table_count" min="0" style="width:50px">
+    <input type="submit" value="Envoyer">
+  </form>
+
+
+
+
+<!-- HOURS -->
 
 <h2>Gérer les horaires</h2>
   <h3>Formulaire mise à jour des horaires du restaurant</h3>
@@ -134,9 +155,3 @@
             </select>
             <input type="submit" value="UpdateHours">
             </form>
-
-<style>
-
-
-
-</style>

@@ -4,4 +4,11 @@
 <?php include "../../../css/style.css"; ?>
 </style>
 
-<?php include_once '../component/admin/adminPanel.php';
+<!-- Split -->
+
+<div class="split"></div>
+
+<!-- Admin Panel -->
+<?php 
+include_once '../component/admin/adminPanel.php';
+?>

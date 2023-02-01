@@ -22,7 +22,7 @@
 
         if(isset($_SESSION['email']) && $_SESSION['email'] == $is_admin) {
           while ($row = mysqli_fetch_assoc($result)) {
-                  echo '<a href="#">
+                  echo '<a href="javascript:void(0)">
                     <div style="background-image:
                     url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
                     <h3>'.$row["titleGallery"].' ('.$row["idGallery"].')</h3>
@@ -31,7 +31,7 @@
           }
         } else {
           while ($row = mysqli_fetch_assoc($result)) {
-                  echo '<a href="#">
+                  echo '<a href="javascript:void(0)">
                     <div style="background-image:
                     url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
                     <h3>'.$row["titleGallery"].'</h3>
@@ -40,12 +40,7 @@
           }
         }
       }
-      
-    // mysqli_stmt_close($stmt);
-    // mysqli_close($conn);
-?>
-
-    </div>
+      ?>
 
     <?php
     if(isset($_SESSION['email']) && $_SESSION['email'] == $is_admin) {

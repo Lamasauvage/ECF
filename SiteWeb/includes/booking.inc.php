@@ -47,6 +47,7 @@ if (isset($_POST['date']) && isset($_POST['time']) && isset($_POST['name'])  && 
   $phone = mysqli_real_escape_string($conn, $_POST['phone']);
   $allergy = mysqli_real_escape_string($conn, $_POST['allergy']);
   $allergy_type = mysqli_real_escape_string($conn, $_POST['allergy_type']);
+  var_dump($date, $time, $name, $email, $phone, $allergy, $allergy_type);
 
   $sql = "INSERT INTO booking (date, time, name, email, phone, allergy, allergy_type) VALUES ('$date', '$time', '$name', '$email', '$phone', '$allergy', '$allergy_type');";
   mysqli_query($conn, $sql);

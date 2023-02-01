@@ -9,6 +9,7 @@
 
 <div class="banner-image">
   <h1>LE QUAI ANTIQUE</h1>
+  <h2>Chef  Arnaud  Michant</h2>
 </div>
 
 <?php

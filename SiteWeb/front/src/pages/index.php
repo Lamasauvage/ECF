@@ -24,6 +24,10 @@
   <h2>Découvrez les spécialités gourmandes de la Savoie le temps d'un repas</h2>
 </div>
 
+<!-- Split -->
+
+<div class="split"></div>
+
 <!-- Gallery -->
 
 <?php include_once '../component/gallery.php'; ?>
@@ -33,6 +37,11 @@
 <a href='http://localhost/STUDI/ECF/SiteWeb/front/src/pages/booking.php'>
   <input type="submit" value="Réserver votre table" class="button">
 </a>
+
+<!-- Split -->
+
+<div class="split"></div>
+
 
 <!-- Footer -->
 

@@ -202,7 +202,6 @@
 
 /* CARTE */
 
-
 table {
   margin: 0 auto;
     border-collapse: collapse;
@@ -283,4 +282,8 @@ footer .day-hours input[type="time"] {
   background-color: #ff0000;
 }
 
+/* DIVERS */
 
+.split {
+  height: 50px;
+}

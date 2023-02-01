@@ -116,7 +116,7 @@
 
 
 
-/* FORMULAIRE */
+/* FORMULAIRE INSCRIPTION */
 
 .signup-form h2 {
   font-size: 1.5em;
@@ -200,6 +200,52 @@
   background-color: #392C1E;
 }
 
+/* CARTE */
+
+
+table {
+  margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    width: 50%;
+}
+
+th {
+  background-color: #ddd;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.filter {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.menu-item-title {
+  font-weight: bold;
+}
+
+.menu-item-price {
+  font-weight: bold;
+  color: #ff9000;
+}
+
+
 
 /* FOOTER */
 
@@ -238,38 +284,3 @@ footer .day-hours input[type="time"] {
 }
 
 
-/* CARTE */
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
-}
-th {
-  background-color: #f2f2f2;
-}
-.menu-header {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px 0;
-}
-.category-header {
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #f2f2f2;
-}
-.menu-item {
-  font-size: 16px;
-}
-.menu-item-title {
-  font-weight: bold;
-}
-.menu-item-price {
-  float: center;
-}

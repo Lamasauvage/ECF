@@ -17,6 +17,15 @@
 <!-- TABLES --> 
 
 <h2>Gérer le nombre de tables</h2>
+<?php
+  include_once '../../../includes/dbh.inc.php';
+  $select_query = "SELECT available FROM tables";
+  $result = mysqli_query($conn, $select_query);
+  $row = mysqli_fetch_assoc($result);
+  $table_count = $row['available'] ?? 0;
+?>
+  <p>Nombre de tables disponibles: <?php echo $table_count; ?></p>
+
   <form action="http://localhost/STUDI/ECF/SiteWeb/front/src/component/adminUpdateTables.php" method="post">
     <label for="table_count">Nombre de tables disponibles:</label>
     <input type="number" id="table_count" name="table_count" min="0" style="width:50px">

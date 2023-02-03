@@ -14,6 +14,8 @@
 <?php
 include_once '../../../js/calendar.php';
 include_once '../component/bookingTable.php';
+?>
+
 
 
 

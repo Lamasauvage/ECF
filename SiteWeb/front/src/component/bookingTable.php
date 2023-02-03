@@ -153,4 +153,6 @@ allergyType.addEventListener("change", function(){
 <!-- Button to book a slot -->
 <button class="booking_button">Réserver</button>
 
+
+
 </form>

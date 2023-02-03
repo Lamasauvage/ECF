@@ -34,9 +34,11 @@
 
 <!-- Booking -->
 
-<a href='http://localhost/STUDI/ECF/SiteWeb/front/src/pages/booking.php'>
+<h2>Réservez votre table</h2>
+    <a href='http://localhost/STUDI/ECF/SiteWeb/front/src/pages/booking.php'>
   <input type="submit" value="Réserver votre table" class="button">
-</a>
+    </a>
+
 
 <!-- Split -->
 

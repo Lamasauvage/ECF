@@ -77,21 +77,22 @@ $(document).ready(function() {
                             var phone = $('#phone').val();
                             var allergy = $('#allergy').val();
                             var allergy_type = $('#allergy_type').val();
+                            
 
                             $.ajax({
                                 type: 'POST',
                                 url: 'http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php',
                                 data: {date: date, time: time, name: name, email: email, phone: phone, allergy: allergy, allergy_type: allergy_type},
                                 success: function (data) {
-                                    console.log(data);
+                                    console.log("Ajax call success: " + (data));
                                     if (data == "success") {
                                         alert("Votre réservation a bien été prise en compte");
-                                        window.location.href = "http://localhost/STUDI/ECF/SiteWeb/front/src/index.php";
+                                        window.location.href = "http://localhost/STUDI/ECF/SiteWeb/index.php";
                                     } else {
-                                        alert("Une erreur est survenue, veuillez réessayer");
+                                        alert("Une erreur est survenue");
                                     }
                                 },
-                            });
+                            })
                         });
                     }
                 });

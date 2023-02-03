@@ -75,14 +75,14 @@ $(document).ready(function() {
                             var name = $('#name').val();
                             var email = $('#email').val();
                             var phone = $('#phone').val();
+                            var guests = $('#guests').val();
                             var allergy = $('#allergy').val();
                             var allergy_type = $('#allergy_type').val();
                             
-
                             $.ajax({
                                 type: 'POST',
                                 url: 'http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php',
-                                data: {date: date, time: time, name: name, email: email, phone: phone, allergy: allergy, allergy_type: allergy_type},
+                                data: {date: date, time: time, name: name, email: email, phone: phone, guests: guests, allergy: allergy, allergy_type: allergy_type},
                                 success: function (data) {
                                     console.log("Ajax call success: " + (data));
                                     if (data == "success") {

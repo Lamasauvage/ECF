@@ -12,6 +12,104 @@
 
 <h2>Gérer les réservations</h2>
 
+<?php
+  include_once '../../../includes/dbh.inc.php';
+
+  $allergyBool = array(
+    "yes" => "Oui",
+    "no" => "Non"
+  );
+
+  $allergyMap = array(
+    "gluten" => "Gluten",
+    "milk" => "Lait",
+    "eggs" => "Oeufs",
+    "peanut" => "Arachide",
+    "nuts" => "Fruit à coque",
+    "seafood" => "Fruit de la mer",
+    "mollusc" => "Mollusque",
+    "fish" => "Poisson",
+    "celery" => "Céleri",
+    "soja" => "Soja",
+    "sesame" => "Sésame",
+    "lupin" => "Lupin",
+    "sulfite" => "Sulfites",
+    "other-allergy" => "Autres"
+  );
+
+  $sql = "SELECT * FROM booking";
+  $result = mysqli_query($conn, $sql);
+
+  if (mysqli_num_rows($result) > 0) {
+      echo "<table>";
+      echo "<tr>";
+      echo "<th>Date</th>";
+      echo "<th>Heure</th>";
+      echo "<th>Nom</th>";
+      echo "<th>Email</th>";
+      echo "<th>Téléphone</th>";
+      echo "<th>Nombre de couverts</th>";
+      echo "<th>Allergie</th>";
+      echo "<th>Type d'allergie</th>";
+      echo "<th>Supprimer</th>";
+      echo "<th>Modifier</th>";
+      echo "</tr>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . (new DateTime($row["date"]))->format("d-m-Y") . "</td>";
+        echo "<td>" . $row["time"] . "</td>";
+        echo "<td>" . $row["name"] . "</td>";
+        echo "<td>" . $row["email"] . "</td>";
+        echo "<td>" . $row["phone"] . "</td>";
+        echo "<td>" . $row["guests"] . "</td>";
+        echo "<td>" . $allergyBool[$row["allergy"]] . "</td>";
+        echo "<td>" . (array_key_exists($row["allergy_type"], $allergyMap) ? $allergyMap[$row["allergy_type"]] : "") . "</td>";
+        echo "<td><button class='delete-btn' onclick='deleteBooking(".$row['id'].")'>Supprimer</button></td>";
+        echo "<td><button class='edit-btn' data-id='".$row['id']."'>Modifier</button></td>";
+        echo "</tr>";
+      }
+      echo "</table>";
+  } else {
+      echo "Aucune réservation enregistrée";
+  }
+?>
+
+<?php
+if (isset($_GET["id"])) {
+  $id = $_GET["id"];
+  $sql = "DELETE FROM booking WHERE id=$id";
+  $result = mysqli_query($conn, $sql);
+  if ($result) {
+      echo 'success';
+  } else {
+      echo "Erreur de suppression: " . mysqli_error($conn);
+  }
+  exit;
+}
+?>
+
+<script>
+function deleteBooking(id) {
+  if (confirm('Êtes-vous sûr de vouloir supprimer cette réservation ?')) {
+    fetch(`admin.php?id=${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert('Réservation supprimée avec succès');
+          location.reload();
+        } else {
+          alert('Une erreur est survenue lors de la suppression de la réservation');
+        }
+      })
+      .catch((error) => {
+        console.error('Erreur:', error);
+        alert('Une erreur est survenue lors de la suppression de la réservation');
+      });
+  }
+}
+</script>
+
 
 
 <!-- TABLES --> 

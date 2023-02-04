@@ -30,7 +30,7 @@
             <select name="allergy_type" id="allergy_type">
               <option value=""></option>
               <option value="gluten">Gluten</option>
-              <option value="lait">Lait</option>
+              <option value="milk">Lait</option>
               <option value="eggs">Oeufs</option>
               <option value="peanut">Arachide</option>
               <option value="nuts">Fruit à coque</option>

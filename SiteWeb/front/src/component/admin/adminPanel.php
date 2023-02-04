@@ -80,7 +80,14 @@ if (isset($_GET["id"])) {
   $sql = "DELETE FROM booking WHERE id=$id";
   $result = mysqli_query($conn, $sql);
   if ($result) {
-      echo 'success';
+      // Increase the number of available tables by 1
+      $sql_update = "UPDATE tables SET available = available + 1";
+      $result_update = mysqli_query($conn, $sql_update);
+      if ($result_update) {
+          echo 'success';
+      } else {
+          echo "Erreur lors de la mise à jour de la table: " . mysqli_error($conn);
+      }
   } else {
       echo "Erreur de suppression: " . mysqli_error($conn);
   }

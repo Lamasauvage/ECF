@@ -71,6 +71,7 @@ $(document).ready(function() {
                         //Ajax call to insert the hour and date in the database
                         $(document).on('click', '.booking_button', function () {
                             var date = $('#datePicker').datepicker('getDate');
+                            var formattedDate = $.datepicker.formatDate('yy-mm-dd', date);
                             var time = $('.slot-button.selected').text();
                             var name = $('#name').val();
                             var email = $('#email').val();
@@ -82,7 +83,7 @@ $(document).ready(function() {
                             $.ajax({
                                 type: 'POST',
                                 url: 'http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php',
-                                data: {date: date, time: time, name: name, email: email, phone: phone, guests: guests, allergy: allergy, allergy_type: allergy_type},
+                                data: {date: formattedDate, time: time, name: name, email: email, phone: phone, guests: guests, allergy: allergy, allergy_type: allergy_type},
                                 success: function (data) {
                                     console.log("Ajax call success: " + (data));
                                     if (data == "success") {

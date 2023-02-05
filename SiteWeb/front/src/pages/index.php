@@ -12,11 +12,9 @@
   <h2>Chef  Arnaud  Michant</h2>
 </div>
 
-<?php
-    if (isset($_SESSION["user_id"])) {
-      echo "<p>Bonjour " . $_SESSION["email"] . "</p>";
-      }
-?>
+<!-- Split -->
+
+<div class="split"></div>
 
 <!-- Text -->
 

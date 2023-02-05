@@ -79,7 +79,7 @@ $(document).ready(function() {
                             var guests = $('#guests').val();
                             var allergy = $('#allergy').val();
                             var allergy_type = $('#allergy_type').val();
-                            
+
                             $.ajax({
                                 type: 'POST',
                                 url: 'http://localhost/STUDI/ECF/SiteWeb/includes/booking.inc.php',

@@ -21,17 +21,19 @@ if (isset($_POST['date']) && isset($_POST['time']) && isset($_POST['name'])  && 
     $guests = mysqli_real_escape_string($conn, $_POST['custom_value']);
   }
 
-$sql = "INSERT INTO booking (date, time, name, email, phone, guests, allergy, allergy_type) VALUES ('$formattedDate', '$time', '$name', '$email', '$phone', '$guests', '$allergy', '$allergy_type')";
-
-echo $sql;
-
-$result = mysqli_query($conn, $sql);
-
-if ($result) {
-    echo "success";
-  } else {
-    echo "error";
+  $sql_update = "UPDATE tables SET available = available - 1";
+  $result_update = mysqli_query($conn, $sql_update);
+  if ($result_update) {
+    // Insert the booking
+    $sql = "INSERT INTO booking (date, time, name, email, phone, guests, allergy, allergy_type) VALUES ('$formattedDate', '$time', '$name', '$email', '$phone', '$guests', '$allergy', '$allergy_type')";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        echo "success";
+    } else {
+        echo "error";
+    }
+    exit();
   }
-} exit();
+}
 
 ?>

@@ -18,8 +18,10 @@
 
 <!-- Text -->
 
-<div id=text-between>
-  <h2>Découvrez les spécialités gourmandes de la Savoie le temps d'un repas</h2>
+<div class="presentation-restaurant">
+  <h2>L'Art de la cuisine Française en Savoie</h2>
+    <p>Découvrez les riches saveurs de la cuisine savoyarde, mettant en vedette des plats traditionnels préparés avec des ingrédients locaux</p>
+    <p>Dégustez des plats savoureux tels que la fondue, la raclette et la tartiflette, associés à de fins vins de la région. Venez goûter les saveurs authentiques de la cuisine alpine française dans notre restaurant</p>
 </div>
 
 <!-- Split -->

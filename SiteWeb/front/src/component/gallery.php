@@ -45,6 +45,7 @@
     <?php
     if(isset($_SESSION['email']) && $_SESSION['email'] == $is_admin) {
       echo '<div class="gallery-upload">
+      <h2>Upload</h2>
       <form action="../../../includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
         <input type="text" name="filename" placeholder="Nom du fichier...">
         <input type="text" name="filetitle" placeholder="Titre de l\'image...">
@@ -57,8 +58,10 @@
         <label for="image_id">Entrez l\'ID de l\'image à supprimer :</label><br>
         <input type="text" id="id" name="id"><br>
         <input type="submit" value="Supprimer l\'image">
-      </form>';
+      </form>
+      </div>';
     }
 
     ?>
+    </div>
   </section>

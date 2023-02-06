@@ -9,7 +9,7 @@ Fonctionnalités :
 TOUS LES UTILISATEURS
 - Création de compte 
 - Connexion sur le site
-- Réservation de créneau 
+- Réservation de créneaux
 
 ADMIN
 - Modification des heures d'ouverture/fermeture (ADMIN)

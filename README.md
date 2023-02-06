@@ -4,6 +4,8 @@ Création d'un site Web dynamique avec base de données
 
 Langage : PHP/JS/HTML/CSS
 
+Environnement : XAMPP/Apache/MySQL/VsCode
+
 Fonctionnalités :
 
 TOUS LES UTILISATEURS

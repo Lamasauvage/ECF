@@ -241,6 +241,8 @@ a:hover {
   color: #906427;
 }
 
+/* MEDIA QUERIES */
+
 /* BOOKING BUTTON */
 
 .booking-box {
@@ -411,17 +413,18 @@ a:hover {
 
 /* CARTE */
 
-table {
+.table-carte {
   margin: 0 auto;
     border-collapse: collapse;
     text-align: center;
     width: 50%;
 }
 
-th {
+.th-carte {
   background-color: #ddd;
   padding: 10px;
   border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
 }
 
 td {
@@ -480,7 +483,7 @@ footer {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px black;
-  width: 30%;
+  width: 20%;
 }
 
 h2 {

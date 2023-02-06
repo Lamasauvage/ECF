@@ -19,12 +19,12 @@
 
 </div>
 
-<table>
-  <tr>
-    <th>Plat</th>
-    <th>Description</th>
-    <th>Prix</th>
-    <th>Catégorie</th>
+<table class="table-carte">
+  <tr class="tr-carte">
+    <th class="th-carte">PLAT</th>
+    <th class="th-carte">DESCRIPTION</th>
+    <th class="th-carte">PRIX</th>
+    <th class="th-carte">CATEGORIE</th>
   </tr>
 
   <?php

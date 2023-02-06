@@ -313,4 +313,7 @@ function deleteBooking(id) {
           </div>
         </div>
       </div>
+
+   <form action="http://localhost/STUDI/ECF/SiteWeb/front/src/component/adminUpdateHours.php" method="post">
+    <input type="submit" value="Submit">
     

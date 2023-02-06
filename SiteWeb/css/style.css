@@ -121,7 +121,6 @@ a:hover {
 
 .gallery-links {
   margin: 0 60px;
-
 }
 .gallery-links h2 {
   font-size: 45px;
@@ -139,7 +138,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: flex-start;
-    background-color: #B6AC97;
+  background-color: #B6AC97;
 }
 
 .gallery-container a {
@@ -242,7 +241,85 @@ a:hover {
   color: #906427;
 }
 
+/* BOOKING BUTTON */
 
+.booking-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 800px;
+  margin: 0 auto;
+  background-image: url(http://localhost/STUDI/ECF/SiteWeb/img/terrasse.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+}
+
+.booking-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #392C1E;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.booking-box .button {
+  background-color: #392C1E;
+  color: #B6AC97;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 100px;
+}
+
+.booking-box .button:hover {
+  background-color: #906427;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1439px) {
+  .booking-box {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .booking-box {
+    width: 80%;
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .booking-box {
+    width: 90%;
+    height: 500px;
+    padding: 10px;
+  }
+  
+  .booking-box h2 {
+    font-size: 24px;
+  }
+  
+  .booking-box .button {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+}
 
 
 /* BOOKING INDEX */
@@ -390,41 +467,51 @@ table {
 /* FOOTER */
 
 footer {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-  font-size: 18px;
-  color: #333;
-}
-
-footer h2 {
-  margin-bottom: 20px;
-}
-
-footer .day-hours {
+  background-color: #B6AC97;
+  padding: 30px;
+  color: #fff;
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
 }
 
-footer .day-hours label {
-  width: 100px;
-  text-align: right;
-  margin-right: 10px;
+.container-footer {
+  background-color: #392C1E;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px black;
+  width: 30%;
 }
 
-footer .day-hours input[type="time"] {
-  width: 80px;
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+td {
+  font-family: 'Montserrat', sans-serif;
+  border: 1px;
+  padding: 10px;
+  text-align: left;
+  font-size: 18px;
 }
 
 
-.selected {
-  background-color: #ff0000;
-}
 
 /* DIVERS */
 
 .split {
   height: 50px;
+}
+
+.selected {
+  background-color: #ff0000;
 }

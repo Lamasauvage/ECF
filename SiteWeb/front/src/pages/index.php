@@ -21,7 +21,7 @@
 <div class="presentation-restaurant">
   <h2>L'Art de la cuisine Française en Savoie</h2>
     <p>Découvrez les riches saveurs de la cuisine savoyarde, mettant en vedette des plats traditionnels préparés avec des ingrédients locaux</p>
-    <p>Dégustez des plats savoureux tels que la fondue, la raclette et la tartiflette, associés à de fins vins de la région. Venez goûter les saveurs authentiques de la cuisine alpine française dans notre restaurant</p>
+    <p>Dégustez des plats savoureux tels que la fondue, la raclette et les crozets, associés à de fins vins de la région. Venez goûter les saveurs authentiques de la cuisine alpine française dans notre restaurant</p>
 </div>
 
 <!-- Split -->
@@ -32,13 +32,18 @@
 
 <?php include_once '../component/gallery.php'; ?>
 
+<!-- Split -->
+
+<div class="split"></div>
+
+
 <!-- Booking -->
-
-<h2>Réservez votre table</h2>
+<div class="booking-box">
+    <h2>Vivez une expérience culinaire unique</h2>
     <a href='http://localhost/STUDI/ECF/SiteWeb/front/src/pages/booking.php'>
-  <input type="submit" value="Réserver votre table" class="button">
+      <input type="submit" value="Réserver votre table" class="button">
     </a>
-
+</div>
 
 <!-- Split -->
 

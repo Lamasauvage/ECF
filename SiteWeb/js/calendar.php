@@ -86,10 +86,11 @@ $(document).ready(function() {
                                 data: {date: formattedDate, time: time, name: name, email: email, phone: phone, guests: guests, allergy: allergy, allergy_type: allergy_type},
                                 success: function (data) {
                                     console.log("Ajax call success: " + (data));
-                                    if (data == "success") {
+                                    if (data.indexOf("success") != -1) {
                                         alert("Votre réservation a bien été prise en compte");
-                                        window.location.href = "http://localhost/STUDI/ECF/SiteWeb/index.php";
+                                        window.location.href = "http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php";
                                     } else {
+                                        console.log("Ajax call error: " + data);
                                         alert("Une erreur est survenue");
                                     }
                                 },

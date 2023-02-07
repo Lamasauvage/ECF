@@ -205,6 +205,15 @@ a:hover {
   background-color: #F0E8D7;
 }
 
+.gallery-upload label {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#id {
+  width: 100px;
+}
+
 .gallery-upload form {
   display: flex;
   flex-direction: column;
@@ -222,6 +231,7 @@ a:hover {
   background-color: #E9E2D2;
   font-size: 16px;
   color: #392C1E;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .gallery-upload input[type="submit"] {
@@ -234,6 +244,7 @@ a:hover {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .gallery-upload input[type="submit"]:hover {
@@ -415,21 +426,23 @@ a:hover {
 
 .table-carte {
   margin: 0 auto;
-    border-collapse: collapse;
+  border-collapse: collapse;
     text-align: center;
     width: 50%;
 }
 
 .th-carte {
-  background-color: #ddd;
+  background-color: #B6AC97;
   padding: 10px;
   border: 1px solid #ccc;
   font-family: 'Montserrat', sans-serif;
 }
 
-td {
-  padding: 10px;
-  border: 1px solid #ccc;
+.menu-item td {
+  padding: 20px;
+  border: 3px solid #ccc;
+  background-color: white;
+  text-align: center;
 }
 
 .filter {
@@ -438,27 +451,123 @@ td {
 }
 
 .btn {
-  background-color: #333;
+  background-color: #392C1E;
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
   margin: 0 10px;
   border-radius: 5px;
   display: inline-block;
+  font-family: 'Montserrat', serif;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .menu-item-title {
   font-weight: bold;
+  text-align: center;
 }
 
 .menu-item-price {
   font-weight: bold;
   color: #ff9000;
+  text-align: center;
 }
 
 tr.menu-item {
   font-family: 'Lora', serif;
 }
+
+
+/* DATE PICKER */
+
+#datePicker {
+  font-family: 'Montserrat', sans-serif;
+  color: #392C1E;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+/* BOOKING PAGE */
+
+.available-slots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* BOOKING BUTTON */
+
+.slot-button {
+  background-color: #B6AC97;
+  color: #392C1E;
+  padding: 10px 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.slot-button:hover {
+  background-color: #392C1E;
+  color: #B6AC97;
+}
+
+.selected {
+  background-color:  #392C1E;
+  color: #B6AC97;
+}
+
+/* FORM BOOKING */
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 3px solid black;
+  background-color: #B6AC97;
+}
+
+.booking-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', serif;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.booking-form select {
+  width: 100%;
+}
+
+#custom_value {
+  width: 100px;
+}
+
+
+/* BOOKING BUTTON */
+
+button.booking_button {
+  font-size: 20px;
+  padding: 20px 40px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
 
 
 /* ADMIN */
@@ -513,8 +622,4 @@ td {
 
 .split {
   height: 50px;
-}
-
-.selected {
-  background-color: #ff0000;
 }

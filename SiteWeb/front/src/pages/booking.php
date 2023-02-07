@@ -16,7 +16,9 @@ include_once '../../../js/calendar.php';
 include_once '../component/bookingTable.php';
 ?>
 
+<!-- Footer -->
 
+<?php include_once '../templates/footer.php'; ?>
 
 
 

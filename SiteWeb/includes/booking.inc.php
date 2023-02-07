@@ -33,6 +33,9 @@ if (isset($_POST['date']) && isset($_POST['time']) && isset($_POST['name'])  && 
         echo "error";
     }
     exit();
+  } else {
+    echo "error";
+    exit();
   }
 }
 

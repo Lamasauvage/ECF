@@ -55,7 +55,7 @@
       </form>
 
       <form method="post" action="../../../includes/deleteImage.inc.php">
-        <label for="image_id">Entrez l\'ID de l\'image à supprimer :</label><br>
+        <label for="image_id">Entrer l\'ID de l\'image à supprimer :</label><br>
         <input type="text" id="id" name="id"><br>
         <input type="submit" value="Supprimer l\'image">
       </form>

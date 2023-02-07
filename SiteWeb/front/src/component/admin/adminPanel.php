@@ -120,7 +120,7 @@ function deleteBooking(id) {
 
 
 
-<!-- TABLES --> 
+<!-- TABLES -->
 
 <h2>Gérer le nombre de tables</h2>
 <?php
@@ -290,7 +290,7 @@ function deleteBooking(id) {
           </div>
         </div>
       </div>
-      
+
       <!-- DIMANCHE -->
       <div class="day-hours-container">
         <div class="day-hours-row">
@@ -314,6 +314,6 @@ function deleteBooking(id) {
         </div>
       </div>
 
-   <form action="http://localhost/STUDI/ECF/SiteWeb/front/src/component/adminUpdateHours.php" method="post">
-    <input type="submit" value="Submit">
-    
+  <form action="http://localhost/STUDI/ECF/SiteWeb/front/src/component/adminUpdateHours.php" method="post">
+    <input type="submit" value="Envoyer">
+  </form>

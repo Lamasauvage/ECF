@@ -339,12 +339,21 @@ a:hover {
 
 /* MENUS */
 
+.meals-picture {
+background-image: url('http://localhost/STUDI/ECF/SiteWeb/img/food.jpg');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+}
+
 .h1-menus {
   text-align: center;
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 1em;
   padding-top: 50px;
+  color: white;
 }
 
 .menu-options {
@@ -352,13 +361,12 @@ a:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 50px 0;
 }
 
 .menu-option {
   width: 50%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.875);
   border-radius: 10px;
   border: 2px solid #906427;
   margin: 20px 0;
@@ -380,6 +388,7 @@ a:hover {
 
 .menu-option p {
   font-size: 1.2em;
+  font-weight: bold;
   margin: 0 0 10px;
   padding-bottom: 20px;
   font-family: 'Lora', serif;
@@ -392,28 +401,40 @@ a:hover {
 
 /* CARTE */
 
+.carte-picture {
+  background-image: url('http://localhost/STUDI/ECF/SiteWeb/img/menu.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .table-carte {
-  margin: 0 auto;
+  margin: 50px auto;
   border-collapse: collapse;
-    text-align: center;
-    width: 50%;
+  text-align: center;
+  width: 50%;
+  padding-bottom: 50px;
 }
 
 .th-carte {
   background-color: #B6AC97;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: none;
   font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px 10px 0 0;
 }
 
 .menu-item td {
   padding: 20px;
-  border: 3px solid #ccc;
-  background-color: white;
+  border: 2px solid #ccc;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .filter {
+  padding-top: 50px;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -429,11 +450,20 @@ a:hover {
   font-family: 'Montserrat', serif;
   font-weight: 600;
   text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color:#B6AC97 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .menu-item-title {
   font-weight: bold;
   text-align: center;
+  color: #392C1E;
 }
 
 .menu-item-price {
@@ -444,7 +474,10 @@ a:hover {
 
 tr.menu-item {
   font-family: 'Lora', serif;
+  font-size: 16px;
+  border-radius: 0 0 10px 10px;
 }
+
 
 
 /* DATE PICKER */
@@ -452,9 +485,13 @@ tr.menu-item {
 #datePicker {
   font-family: 'Montserrat', sans-serif;
   color: #392C1E;
-  padding: 10px;
+  padding: 50px;
   border-radius: 5px;
-
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
 }
 
 /* BOOKING PAGE */
@@ -477,7 +514,6 @@ tr.menu-item {
   text-align: center;
   cursor: pointer;
   border-radius: 5px;
-
 }
 
 .slot-button:hover {
@@ -491,6 +527,14 @@ tr.menu-item {
 }
 
 /* FORM BOOKING */
+
+.vue {
+  background-image: url(http://localhost/STUDI/ECF/SiteWeb/img/vue.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
 
 .booking-form {
   display: flex;
@@ -531,12 +575,13 @@ tr.menu-item {
 
 button.booking_button {
   font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
   padding: 20px 40px;
   text-align: center;
   display: block;
   margin: 0 auto;
   background-color: #B6AC97;
-  margin-bottom: 50px;
 }
 
 button.booking_button:hover {

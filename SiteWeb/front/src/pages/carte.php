@@ -3,29 +3,24 @@
 <?php include "../../../css/style.css"; ?>
 </style>
 
-<!-- Split -->
-
-<div class="split"></div>
-
 <!-- Carte -->
 
+<div class="carte-picture">
+  <div class="filter">
+    <a href="#" class="btn" data-filter="all">Tout</a>
+    <a href="#" class="btn" data-filter="entree">Entrée</a>
+    <a href="#" class="btn" data-filter="plat">Plat</a>
+    <a href="#" class="btn" data-filter="dessert">Dessert</a>
+    <a href="#" class="btn" data-filter="vin">Vin</a>
+  </div>
 
-<div class="filter">
-  <a href="#" class="btn" data-filter="all">Tout</a>
-  <a href="#" class="btn" data-filter="entree">Entrée</a>
-  <a href="#" class="btn" data-filter="plat">Plat</a>
-  <a href="#" class="btn" data-filter="dessert">Dessert</a>
-  <a href="#" class="btn" data-filter="vin">Vin</a>
-
-</div>
-
-<table class="table-carte">
-  <tr class="tr-carte">
-    <th class="th-carte">PLAT</th>
-    <th class="th-carte">DESCRIPTION</th>
-    <th class="th-carte">PRIX</th>
-    <th class="th-carte">CATEGORIE</th>
-  </tr>
+  <table class="table-carte">
+    <tr class="tr-carte">
+      <th class="th-carte">PLAT</th>
+      <th class="th-carte">DESCRIPTION</th>
+      <th class="th-carte">PRIX</th>
+      <th class="th-carte">CATEGORIE</th>
+    </tr>
 
   <?php
   include_once '../../../includes/csv.inc.php';
@@ -54,7 +49,12 @@
   }
 }
   ?>
-</table>
+  </table>
+
+  <!-- SPLIT -->
+  <div class="split"></div>
+  
+</div>
 
 <script>
   const btns = document.querySelectorAll('.btn');
@@ -77,10 +77,6 @@
     });
   });
 </script>
-
-<!-- Split -->
-
-<div class="split"></div>
 
 <!-- Footer -->
 

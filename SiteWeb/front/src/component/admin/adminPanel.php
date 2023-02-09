@@ -101,7 +101,7 @@
       }
       echo "</table>";
   } else {
-      echo "<tr class='booking-table-row'><td class='booking-table-empty'>Aucune réservation enregistrée</td></tr>";
+      echo "<h3 class='no-booking'>Aucune réservation enregistrée</h3>";
   }
 ?>
 

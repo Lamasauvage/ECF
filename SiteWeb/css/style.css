@@ -735,6 +735,16 @@ button.booking_button:hover {
   margin-right: 10px;
 }
 
+
+.no-booking {
+  color: red;
+  font-style: italic;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px;
+}
+
 .text-table {
   font-weight: bold;
   margin-top: 20px;

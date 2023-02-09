@@ -82,7 +82,6 @@ allergyType.addEventListener("change", function(){
 
 </script>
 
-
 <?php
   // Error Messages
     if (isset($_GET["error"])) {
@@ -109,4 +108,14 @@ allergyType.addEventListener("change", function(){
 
   </section>
 
-  <?php include_once '../templates/footer.php'; ?>
+  <div class="signup-form-link">
+    <p>Déjà inscrit ? <a href="login.php">Connectez-vous</a></p>
+  </div>
+
+<!-- Split -->
+
+<div class="split"></div>
+
+<!-- Footer -->
+
+<?php include_once '../templates/footer.php'; ?>

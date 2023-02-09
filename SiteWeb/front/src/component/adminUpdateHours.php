@@ -4,8 +4,6 @@
   }
     ?>
 
-
-
   <div class="container-footer">
     <h2>Nos horaires d'ouverture</h2>
     <table>

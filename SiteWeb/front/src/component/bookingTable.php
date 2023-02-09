@@ -25,7 +25,7 @@ include_once '../../../includes/dbh.inc.php';
 
 <div class="booking-content">
   <form class="booking-form">
-    <h2>Formulaire de réservation</h2>
+    <h2>Réserver une table</h2>
     <label for="name">Nom:</label>
     <input type="text" id="name" name="name">
 

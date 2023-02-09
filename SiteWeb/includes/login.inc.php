@@ -16,8 +16,6 @@ if (isset($_POST["submit"])) {
     exit();
   }
 
-  // METTRE D'AUTRES MSG ERREURS
-
   loginUser($conn, $email, $pwd);
 }
 else {

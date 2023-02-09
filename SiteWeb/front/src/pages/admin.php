@@ -12,3 +12,11 @@
 <?php 
 include_once '../component/admin/adminPanel.php';
 ?>
+
+<!-- Split -->
+
+<div class="split"></div>
+
+<!-- footer -->
+
+<?php include_once '../templates/footer.php'; ?>

@@ -22,8 +22,10 @@ include_once '../../../includes/dbh.inc.php';
 ?>
 
 <!-- Form to indicate name/email and phone -->
+
 <div class="booking-content">
   <form class="booking-form">
+    <h2>Formulaire de réservation</h2>
     <label for="name">Nom:</label>
     <input type="text" id="name" name="name">
 
@@ -35,7 +37,6 @@ include_once '../../../includes/dbh.inc.php';
 
 
   <!-- Number of covers -->
-
 
     <label for="guests">Nombre de couverts:</label>
     <select name="guests" id="guests">
@@ -83,7 +84,7 @@ include_once '../../../includes/dbh.inc.php';
       </select>
     </form>
 
-    <form id="allergy_form" style="display:none;">
+    <form class="booking-form" id="allergy_form" style="display:none;">
       <label for="allergy_type">Préciser le type d'allergie :</label>
       <select name="allergy_type" id="allergy_type">
         <option value=""></option>

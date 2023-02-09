@@ -49,7 +49,6 @@
 
 <div class="split"></div>
 
-
 <!-- Footer -->
 
 <?php include_once '../templates/footer.php'; ?>

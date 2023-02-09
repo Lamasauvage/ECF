@@ -57,6 +57,7 @@
       </div>
 
 <!-- JS SCRIPT TO SHOW/HIDE FORM -->
+
 <script>
 let select2 = document.getElementById("allergy");
 let form = document.getElementById("allergy-form");
@@ -83,7 +84,7 @@ allergyType.addEventListener("change", function(){
 
 
 <?php
-  // Error Messages 
+  // Error Messages
     if (isset($_GET["error"])) {
       if ($_GET["error"] == "emptyinput") {
         echo "<p>Veuillez renseigner tous les champs</p>";

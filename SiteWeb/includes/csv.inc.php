@@ -40,3 +40,4 @@ $deleteSql = "DELETE FROM dishes WHERE CONCAT(title, ',', description, ',', pric
 mysqli_query($conn, $deleteSql);
 
 
+

@@ -68,7 +68,8 @@ $(document).ready(function() {
                                 console.log("Selected slot: " + selectedSlot);
                         });
 
-                        //Ajax call to insert the hour and date in the database
+                        //Ajax call to insert the booking in the database
+
                         $(document).on('click', '.booking_button', function () {
                             var date = $('#datePicker').datepicker('getDate');
                             var formattedDate = $.datepicker.formatDate('yy-mm-dd', date);
@@ -79,6 +80,17 @@ $(document).ready(function() {
                             var guests = $('#guests').val();
                             var allergy = $('#allergy').val();
                             var allergy_type = $('#allergy_type').val();
+
+                            if (!formattedDate || !time || !name || !email || !phone || !guests || !allergy) {
+                                alert("Tous les champs sont requis");
+                                return;
+                                }
+  
+                            // Check allergy_type only if allergy is not equal to "no"
+                            if (allergy !== "no" && !allergy_type) {
+                                alert("Le type d'allergie est requis");
+                                return;
+                                }
 
                             $.ajax({
                                 type: 'POST',

@@ -24,7 +24,7 @@
           while ($row = mysqli_fetch_assoc($result)) {
                   echo '<a href="javascript:void(0)">
                     <div style="background-image:
-                    url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
+                    url(../../../img/gallery/'.$row["imgFullNameGallery"].'" title="'.$row["titleGallery"].'");"></div>
                     <h3>'.$row["titleGallery"].' ('.$row["idGallery"].')</h3>
                     <p>'.$row["descriptionGallery"].'</p>
                     </a>';
@@ -33,7 +33,7 @@
           while ($row = mysqli_fetch_assoc($result)) {
                   echo '<a href="javascript:void(0)">
                     <div style="background-image:
-                    url(../../../img/gallery/'.$row["imgFullNameGallery"].');"></div>
+                    url(../../../img/gallery/'.$row["imgFullNameGallery"].'" title="'.$row["titleGallery"].'");"></div>
                     <h3>'.$row["titleGallery"].'</h3>
                     <p>'.$row["descriptionGallery"].'</p>
                     </a>';

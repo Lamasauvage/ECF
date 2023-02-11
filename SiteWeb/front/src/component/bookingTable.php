@@ -148,12 +148,15 @@ include_once '../../../includes/dbh.inc.php';
 
 
   <!-- Form to indicate the date -->
+
   <div class="available-slots" id="available_slots"></div>
 
   <!-- Button to book a slot -->
+
   <button class="booking_button">Réserver</button>
 
   <!-- SPLIT -->
+
   <div class="split"></div>
 
   </form>

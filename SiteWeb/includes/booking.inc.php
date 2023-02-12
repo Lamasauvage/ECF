@@ -21,22 +21,31 @@ if (isset($_POST['date']) && isset($_POST['time']) && isset($_POST['name'])  && 
     $guests = mysqli_real_escape_string($conn, $_POST['custom_value']);
   }
 
-  $sql_update = "UPDATE tables SET available = available - 1";
-  $result_update = mysqli_query($conn, $sql_update);
-  if ($result_update) {
-    // Insert the booking
-    $sql = "INSERT INTO booking (date, time, name, email, phone, guests, allergy, allergy_type) VALUES ('$formattedDate', '$time', '$name', '$email', '$phone', '$guests', '$allergy', '$allergy_type')";
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo "success";
-    } else {
-        echo "error";
-    }
-    exit();
-  } else {
-    echo "error";
-    exit();
+  $sql_table = "INSERT INTO tables (table_id) VALUES (NULL)";
+  $result_table = mysqli_query($conn, $sql_table);
+  if ($result_table) {
+      $table_id = mysqli_insert_id($conn);
+  
+      // Decrease the number of available tables
+      $sql_update = "UPDATE tables SET available = available - 1";
+      $result_update = mysqli_query($conn, $sql_update);
+      if ($result_update) {
+          // Calculate the time when the booking will be invalid
+          $valid_until = date('Y-m-d H:i:s', strtotime("$formattedDate $time +1 hour"));
+          
+          // Insert the booking
+          $sql = "INSERT INTO booking (date, time, name, email, phone, guests, allergy, allergy_type, table_id, valid_until) VALUES ('$formattedDate', '$time', '$name', '$email', '$phone', '$guests', '$allergy', '$allergy_type', '$table_id', '$valid_until')";
+          $result = mysqli_query($conn, $sql);
+          if ($result) {
+              echo "success";
+          } else {
+              echo "error";
+          }
+          exit();
+      } else {
+          echo "error";
+          exit();
+      }
   }
-}
-
+}  
 ?>

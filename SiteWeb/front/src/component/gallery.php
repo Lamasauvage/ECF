@@ -41,7 +41,7 @@
         }
       }
       ?>
-
+    </div>
     <?php
     if(isset($_SESSION['email']) && $_SESSION['email'] == $is_admin) {
       echo '<div class="gallery-upload">
@@ -63,5 +63,5 @@
     }
 
     ?>
-    </div>
+    
   </section>

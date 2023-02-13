@@ -805,6 +805,11 @@ tr.menu-item {
     padding: 5px;
     font-size: 13px;
   }
+
+  .btn {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -824,11 +829,20 @@ tr.menu-item {
   #td-category {
     display: none;
   }
+
+  .btn {
+    padding: 10px 8px;
+    font-size: 10px;
+  }
 }
 
 @media only screen and (max-width: 375px) {
   .table-carte {
     width: 100%;
+  }
+
+  .menu-item td {
+    padding: 5px;
   }
 }
 
@@ -898,6 +912,21 @@ tr.menu-item {
   .menu-option-price{
     font-weight: bold;
   }
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  .menu-option {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .menu-option {
+    width: 100%;
+  }
+}
 
 /* BOOKING PAGE */
 

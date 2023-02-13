@@ -1038,6 +1038,90 @@ button.booking_button:hover {
   color: #B6AC97;
 }
 
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1920px) {
+  .booking-form {
+    width: 25%;
+  }
+
+  .available-slots {
+    padding: 50px 100px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .booking-form {
+    width: 33%;
+  }
+
+  .available-slots {
+    padding: 50px 100px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .booking-form {
+    width: 50%;
+  }
+
+  .available-slots {
+    padding: 50px 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .booking-form {
+    width: 75%;
+  }
+
+  .available-slots {
+    padding: 50px 50px;
+  }
+
+  .slot-button {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #datePicker {
+    font-size: 16px;
+  }
+
+  .booking-form {
+    width: 100%;
+  }
+
+  .available-slots {
+    padding: 50px 10px;
+  }
+
+  .slot-button {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #datePicker {
+    font-size: 14px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .booking-form {
+    width: 100%;
+  }
+
+  .available-slots {
+    padding: 50px 10px;
+  }
+
+  .slot-button {
+    font-size: 16px;
+  }
+}
+
 
 /* FORMULAIRE INSCRIPTION */
 

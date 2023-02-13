@@ -19,7 +19,7 @@ p {
   font-weight: 400;
 }
 
-/* NAVBAR */ 
+/* NAVBAR */
 
 .navbar-box {
   display: inline-block;
@@ -103,7 +103,6 @@ a:hover {
   color: #B6AC97;
   text-transform: uppercase;
   padding-bottom: 20px;
-  
 }
 
 .presentation-restaurant p {
@@ -127,11 +126,11 @@ a:hover {
   .banner-image h2 {
     font-size: 40px;
   }
-  
+
   .presentation-restaurant h2 {
     font-size: 40px;
   }
-  
+
   .presentation-restaurant p {
     font-size: 20px;
   }
@@ -146,11 +145,11 @@ a:hover {
   .banner-image h2 {
     font-size: 30px;
   }
-  
+
   .presentation-restaurant h2 {
     font-size: 30px;
   }
-  
+
   .presentation-restaurant p {
     font-size: 20px;
   }
@@ -165,11 +164,11 @@ a:hover {
   .banner-image h2 {
     font-size: 30px;
   }
-  
+
   .presentation-restaurant h2 {
     font-size: 30px;
   }
-  
+
   .presentation-restaurant p {
     font-size: 20px;
   }
@@ -184,11 +183,11 @@ a:hover {
   .banner-image h2 {
     font-size: 30px;
   }
-  
+
   .presentation-restaurant h2 {
     font-size: 30px;
   }
-  
+
   .presentation-restaurant p {
     font-size: 20px;
   }
@@ -209,11 +208,11 @@ a:hover {
   .banner-image h2 {
     font-size: 25px;
   }
-  
+
   .presentation-restaurant h2 {
     font-size: 22px;
   }
-  
+
   .presentation-restaurant p {
     font-size: 18px;
     margin: 30px 0;
@@ -229,11 +228,11 @@ a:hover {
   .banner-image h2 {
     font-size: 20px;
   }
-  
+
   .presentation-restaurant h2 {
     font-size: 20px;
   }
-  
+
   .presentation-restaurant p {
     font-size: 18px;
     margin: 30px 0;
@@ -253,11 +252,11 @@ a:hover {
   .presentation-restaurant {
     padding: 30px 20px;
   }
-  
+
   .presentation-restaurant h2 {
     font-size: 20px;
   }
-  
+
   .presentation-restaurant p {
     font-size: 18px;
     margin: 20px 0;
@@ -619,7 +618,7 @@ a:hover {
 
   .gallery-upload {
     width: 300px;
-    
+
   }
 
   .gallery-upload label {
@@ -635,8 +634,6 @@ a:hover {
     font-size: 12px;
   }
 }
-
-
 
 /* BOOKING BUTTON ON INDEX PAGE FOR REDIRECTION TO BOOKING PAGE */
 
@@ -684,102 +681,6 @@ a:hover {
 .booking-box .button:hover {
   background-color: #906427;
 }
-
-
-/* MEDIA QUERIES */
-
-@media only screen and (max-width: 1439px) {
-  .booking-box {
-    width: 60%;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .booking-box {
-    width: 80%;
-    height: 600px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .booking-box {
-    width: 90%;
-    height: 500px;
-    padding: 10px;
-  }
-  
-  .booking-box h2 {
-    font-size: 24px;
-  }
-  
-  .booking-box .button {
-    font-size: 16px;
-    padding: 8px 15px;
-  }
-}
-
-
-/* MENUS */
-
-.meals-picture {
-background-image: url('http://localhost/STUDI/ECF/SiteWeb/img/food.jpg');
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-
-}
-
-.h1-menus {
-  text-align: center;
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 1em;
-  padding-top: 50px;
-  color: white;
-}
-
-.menu-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.menu-option {
-  width: 50%;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.875);
-  border-radius: 10px;
-  border: 2px solid #906427;
-  margin: 20px 0;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.menu-option h3 {
-  font-size: 1.5em;
-  margin: 0 0 10px;
-}
-
-.menu-option h4 {
-  font-size: 1.2em;
-  margin: 0 0 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.menu-option p {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 0 0 10px;
-  padding-bottom: 20px;
-  font-family: 'Lora', serif;
-}
-
-.menu-option-price{
-  font-weight: bold;
-}
-
 
 /* CARTE */
 
@@ -860,7 +761,145 @@ tr.menu-item {
   border-radius: 0 0 10px 10px;
 }
 
+/* MEDIA QUERIES */
 
+@media only screen and (max-width: 1920px) {
+  .table-carte {
+    width: 60%;
+  }
+
+  .menu-item td {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .table-carte {
+    width: 70%;
+  }
+
+  .menu-item td {
+    padding: 10px;
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .table-carte {
+    width: 80%;
+  }
+
+  .menu-item td {
+    padding: 5px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .table-carte {
+    width: 90%;
+    margin : 0 auto;
+  }
+
+  .menu-item td {
+    padding: 5px;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .table-carte {
+    width: 100%;
+  }
+
+  .menu-item td {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  #th-category {
+    display: none;
+  }
+
+  #td-category {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .table-carte {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .table-carte {
+    width: 100%;
+  }
+}
+
+/* MENUS */
+
+.meals-picture {
+  background-image: url('http://localhost/STUDI/ECF/SiteWeb/img/food.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
+  .h1-menus {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding-top: 50px;
+    color: white;
+  }
+
+  .menu-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-option {
+    width: 50%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.875);
+    border-radius: 10px;
+    border: 2px solid #906427;
+    margin: 20px 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .menu-option h3 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+  }
+
+  .menu-option h4 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .menu-option p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding-bottom: 20px;
+    font-family: 'Lora', serif;
+  }
+
+  .menu-option-price{
+    font-weight: bold;
+  }
+
+/* BOOKING PAGE */
 
 /* DATE PICKER */
 
@@ -875,8 +914,6 @@ tr.menu-item {
   display: flex;
   justify-content: center;
 }
-
-/* BOOKING PAGE */
 
 .available-slots {
   display: flex;

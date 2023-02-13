@@ -19,7 +19,7 @@
       <th class="th-carte">PLAT</th>
       <th class="th-carte">DESCRIPTION</th>
       <th class="th-carte">PRIX</th>
-      <th class="th-carte">CATEGORIE</th>
+      <th class="th-carte" id="th-category">CATEGORIE</th>
     </tr>
 
   <?php
@@ -42,7 +42,7 @@
       <td class="menu-item-title"><?php echo $row['title']; ?></td>
       <td><?php echo $row['description']; ?></td>
       <td class="menu-item-price"><?php echo $row['price']; ?>€</td>
-      <td><?php echo $categories[$row['categorie']]; ?></td>
+      <td id="td-category"><?php echo $categories[$row['categorie']]; ?></td>
     </tr>
     
   <?php

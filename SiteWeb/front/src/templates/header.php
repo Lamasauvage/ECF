@@ -20,6 +20,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
 
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-q9+8dgQgjGKw+RxoHfEGgOdgMvj7+jLfq9J8UDtW5Etb70C4G+sKxj+a1e4+Af" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.2.0/dist/umd/popper.min.js" integrity="sha384-oKj2QeiaNlR9aX9JjLp+CJg/Ip7Vx24+bnEKJZv03o6U2oV9c0Q1J7yUOd6+xIM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+
+
+
+<!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
   </head>
 
   <body>

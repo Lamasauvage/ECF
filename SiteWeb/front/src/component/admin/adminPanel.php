@@ -83,7 +83,6 @@
       echo "<th class='booking-table-header'>Allergie</th>";
       echo "<th class='booking-table-header'>Type d'allergie</th>";
       echo "<th class='booking-table-header'>Supprimer</th>";
-      echo "<th class='booking-table-header'>Modifier</th>";
       echo "</tr>";
       while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr class='booking-table-row'>";
@@ -96,7 +95,6 @@
         echo "<td class='booking-table-data'>" . $allergyBool[$row["allergy"]] . "</td>";
         echo "<td class='booking-table-data'>" . (array_key_exists($row["allergy_type"], $allergyMap) ? $allergyMap[$row["allergy_type"]] : "") . "</td>";
         echo "<td><button class='delete-btn' onclick='deleteBooking(".$row['id'].")'>Supprimer</button></td>";
-        echo "<td><button class='edit-btn' data-id='".$row['id']."'>Modifier</button></td>";
         echo "</tr>";
       }
       echo "</table>";

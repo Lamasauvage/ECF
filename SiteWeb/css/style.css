@@ -23,7 +23,7 @@ p {
 
 .navbar-box {
   display: inline-block;
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
@@ -32,14 +32,13 @@ p {
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
 }
-
 
 .nav-link {
   font-family: 'Montserrat', sans-serif;
@@ -56,6 +55,29 @@ a:hover {
   transition: all 0.2s ease-in-out;
 }
 
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1440px) {
+  .nav-link {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    margin-left: 0;
+  }
+
+  #navbarSupportedContent {
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10 !important;
+  }
+}
 
 /* BANNER IMAGE */
 
@@ -682,6 +704,33 @@ a:hover {
   background-color: #906427;
 }
 
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1440px) {
+
+  .booking-box {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .booking-box {
+    width: 100%;
+    height: 600px;
+    border-radius: 0;
+  }
+
+  .booking-box h2 {
+    font-size: 25px;
+  }
+
+  .booking-box .button {
+    font-size: 16px;
+  }
+}
+
+
 /* CARTE */
 
 .carte-picture {
@@ -920,6 +969,10 @@ tr.menu-item {
   .menu-option {
     width: 90%;
   }
+
+  .menu-option > p {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -1121,7 +1174,6 @@ button.booking_button:hover {
     font-size: 16px;
   }
 }
-
 
 /* FORMULAIRE INSCRIPTION */
 
@@ -1356,19 +1408,7 @@ button.booking_button:hover {
   border-radius: 5px;
   padding: 8px 16px;
   cursor: pointer;
-  
 }
-
-.edit-btn {
-  text-align: center;
-  background-color: #4d79ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
 
 /* UPDATE HOURS */
 
@@ -1433,6 +1473,124 @@ input[type="time"] {
   border-radius: 5px;
 }
 
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1440px) {
+  .booking-table {
+    width: 80%;
+  }
+
+  .booking-table tbody {
+    font-size: 16px;
+  }
+
+  .booking-table-data {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .booking-table {
+    width: 100%;
+  }
+
+  .booking-table tbody {
+    font-size: 14px;
+  }
+
+  .booking-table-data {
+    font-size: 14px;
+  }
+
+  .booking-table-header {
+    font-size: 14px;
+    padding: 3px;
+  }
+
+  .delete-btn {
+    font-size: 14px;
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .admin-panel-section {
+    width: 100%;
+  }
+
+  .admin-title-carte {
+    font-size: 15px;
+  }
+
+  .admin-title-table {
+    font-size: 15px;
+  }
+
+  .admin-panel-form {
+    flex-direction: column;
+  }
+
+  .admin-panel-input-file {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .admin-panel-input-submit {
+    width: 100%;
+  }
+
+
+
+  .form-table {
+    width: 100%;
+  }
+
+  .form-table input {
+    width: 100%;
+  }
+
+  .form-table input {
+    width: 100%;
+  }
+
+  .form-table input[type="submit"] {
+    width: 100%;
+  }
+
+  .form-hours-update {
+    width: 100%;
+  }
+
+  .day-hours-container {
+    margin-bottom: 10px;
+  }
+
+  .day-hours-row {
+    flex-direction: column;
+  }
+
+  .weekday-label-col {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .morning-hours-col,
+  .evening-hours-col,
+  .status-col {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hours-submit-container {
+    height: 200px;
+  }
+
+  .input-hours {
+    width: 100%;
+  }
+}
+  
 
 /* FOOTER */
 
@@ -1450,7 +1608,7 @@ footer {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px black;
-  width: 20%;
+  width: 30%;
 }
 
 h2 {
@@ -1472,6 +1630,57 @@ td {
   padding: 10px;
   text-align: left;
   font-size: 18px;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1440px) {
+  .container-footer {
+    width: 40%;
+  }
+
+  td {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-footer {
+    width: 60%;
+  }
+
+  td {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container-footer {
+    width: 80%;
+  }
+
+  td {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  footer {
+    padding: 10px;
+  }
+
+  .container-footer {
+    width: 100%;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  td {
+    font-size: 14px;
+  }
 }
 
 

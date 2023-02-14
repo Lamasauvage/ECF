@@ -47,33 +47,32 @@ $available_slots = array();
 // Morning
 for ($time = $open_time_morning; $time <= $close_time_morning; $time = strtotime("+15 minutes", $time)) {
   if (strtotime("+1 hour", $time) > $close_time_morning) {
-      continue;
+  continue;
   }
-  if (!in_array($time, $booked_slots)) {
-      $query = "SELECT available FROM tables";
-      $result = mysqli_query($conn, $query);
-      $row = mysqli_fetch_assoc($result);
-      if ($row['available'] > 0) {
-          $available_slots[] = date("H:i", $time);
-      }
+  if (!in_array(date("H:i", $time), $booked_slots)) {
+  $query = "SELECT available FROM tables";
+  $result = mysqli_query($conn, $query);
+  $row = mysqli_fetch_assoc($result);
+  if ($row['available'] > 0) {
+  $available_slots[] = date("H:i", $time);
   }
-}
+  }
+  }
 
 // Evening
 for ($time = $open_time_evening; $time <= $close_time_evening; $time = strtotime("+15 minutes", $time)) {
   if (strtotime("+1 hour", $time) > $close_time_evening) {
-      // Skip the iteration or break out of the loop
-      continue;
+  continue;
   }
-  if (!in_array($time, $booked_slots)) {
-      $query = "SELECT available FROM tables";
-      $result = mysqli_query($conn, $query);
-      $row = mysqli_fetch_assoc($result);
-      if ($row['available'] > 0) {
-          $available_slots[] = date("H:i", $time);
-      }
+  if (!in_array(date("H:i", $time), $booked_slots)) {
+  $query = "SELECT available FROM tables";
+  $result = mysqli_query($conn, $query);
+  $row = mysqli_fetch_assoc($result);
+  if ($row['available'] > 0) {
+  $available_slots[] = date("H:i", $time);
   }
-}
+  }
+  }
 
 // Return the available slots as a PHP array
 header('Content-Type: application/json');

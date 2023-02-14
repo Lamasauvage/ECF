@@ -6,6 +6,8 @@ Langage : PHP/JS/HTML/CSS
 
 Environnement : XAMPP/Apache/MySQL/VsCode
 
+Deploiement : OVHCloud
+
 Fonctionnalités :
 
 TOUS LES UTILISATEURS

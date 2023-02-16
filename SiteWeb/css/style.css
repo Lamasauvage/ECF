@@ -1299,6 +1299,11 @@ button.booking_button:hover {
   width: 45%;
 }
 
+.admin-title-people {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .admin-title-carte {
   text-align: center;
   margin-bottom: 20px;
@@ -1308,7 +1313,6 @@ button.booking_button:hover {
   text-align: center;
   margin-bottom: 20px;
 }
-
 
 .admin-panel-form {
   display: flex;
@@ -1320,7 +1324,6 @@ button.booking_button:hover {
   margin-right: 10px;
 }
 
-
 .no-booking {
   color: red;
   font-style: italic;
@@ -1331,6 +1334,12 @@ button.booking_button:hover {
 }
 
 .text-table {
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.text-capacity {
   font-weight: bold;
   margin-top: 20px;
   text-align: center;
@@ -1351,6 +1360,17 @@ button.booking_button:hover {
 
 #table_count{
   margin-bottom: 20px;
+}
+
+.form-people {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#people_count{
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .admin-panel input[type="submit"] {
@@ -1514,11 +1534,20 @@ input[type="time"] {
 }
 
 @media only screen and (max-width: 768px) {
+
+  .admin-panel {
+    flex-direction: column;
+  }
   .admin-panel-section {
     width: 100%;
+    margin-bottom: 20px;
   }
 
   .admin-title-carte {
+    font-size: 15px;
+  }
+
+  .admin-title-people {
     font-size: 15px;
   }
 
@@ -1538,8 +1567,6 @@ input[type="time"] {
   .admin-panel-input-submit {
     width: 100%;
   }
-
-
 
   .form-table {
     width: 100%;
@@ -1590,7 +1617,7 @@ input[type="time"] {
     width: 100%;
   }
 }
-  
+
 
 /* FOOTER */
 
@@ -1690,3 +1717,4 @@ td {
 .split {
   height: 50px;
 }
+

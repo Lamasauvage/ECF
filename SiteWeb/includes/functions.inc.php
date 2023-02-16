@@ -12,8 +12,6 @@ function emptyInputSignup($email, $pwd, $pwdRepeat, $guests, $allergy, $allergy_
   return $result;
 }
 
-
-
 // Function Invalid Email
 function invalidEmail($email) {
   $result = false;
@@ -53,7 +51,7 @@ function userEmailExists($conn, $email) {
   $result = false;
   return $result;
  }
- 
+
  mysqli_stmt_close($stmt);
 }
 

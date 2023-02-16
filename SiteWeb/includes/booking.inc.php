@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 include_once '../includes/dbh.inc.php';
 var_dump($_POST);
@@ -21,31 +19,49 @@ if (isset($_POST['date']) && isset($_POST['time']) && isset($_POST['name'])  && 
     $guests = mysqli_real_escape_string($conn, $_POST['custom_value']);
   }
 
+  // Get the current restaurant capacity
+  $sql_capacity = "SELECT capacity FROM restaurant_capacity";
+  $result_capacity = mysqli_query($conn, $sql_capacity);
+  $capacity = mysqli_fetch_assoc($result_capacity)['capacity'];
+
+  // Add new booking to tables
   $sql_table = "INSERT INTO tables (table_id) VALUES (NULL)";
   $result_table = mysqli_query($conn, $sql_table);
+
   if ($result_table) {
       $table_id = mysqli_insert_id($conn);
 
-      // Decrease the number of available tables
-      $sql_update = "UPDATE tables SET available = available - 1";
-      $result_update = mysqli_query($conn, $sql_update);
-      if ($result_update) {
-          // Calculate the time when the booking will be invalid
-          $valid_until = date('Y-m-d H:i:s', strtotime("$formattedDate $time +1 hour"));
+      // Update the restaurant capacity by subtracting the number of guests from the booking
+      $sql_update_capacity = "UPDATE restaurant_capacity SET capacity = capacity - $guests";
+      $result_update_capacity = mysqli_query($conn, $sql_update_capacity);
 
-          // Insert the booking
-          $sql = "INSERT INTO booking (date, time, name, email, phone, guests, allergy, allergy_type, table_id, valid_until) VALUES ('$formattedDate', '$time', '$name', '$email', '$phone', '$guests', '$allergy', '$allergy_type', '$table_id', '$valid_until')";
-          $result = mysqli_query($conn, $sql);
-          if ($result) {
-              echo "success";
+      if ($result_update_capacity) {
+          // Decrease the number of available tables
+          $sql_update_tables = "UPDATE tables SET available = available - 1";
+          $result_update_tables = mysqli_query($conn, $sql_update_tables);
+
+          if ($result_update_tables) {
+              // Calculate the time when the booking will be invalid
+              $valid_until = date('Y-m-d H:i:s', strtotime("$formattedDate $time +1 hour"));
+
+              // Insert the booking
+              $sql_insert_booking = "INSERT INTO booking (date, time, name, email, phone, guests, allergy, allergy_type, table_id, valid_until) VALUES ('$formattedDate', '$time', '$name', '$email', '$phone', '$guests', '$allergy', '$allergy_type', '$table_id', '$valid_until')";
+              $result_insert_booking = mysqli_query($conn, $sql_insert_booking);
+
+              if ($result_insert_booking) {
+                  // Booking made successfully
+                  echo "success";
+              } else {
+                  // Error making the booking
+                  echo "error";
+              }
           } else {
+              // Error updating available tables
               echo "error";
           }
-          exit();
       } else {
+          // Error updating restaurant capacity
           echo "error";
-          exit();
       }
   }
 }
-?>

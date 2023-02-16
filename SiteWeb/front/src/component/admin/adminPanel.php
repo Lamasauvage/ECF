@@ -36,6 +36,34 @@
       }
     ?>
   </div>
+
+
+<!-- PEOPLE -->
+  <div class="admin-panel-section">
+    <h2 class="admin-title-people">Gérer les personnes</h2>
+    <?php
+      include_once '../../../includes/dbh.inc.php';
+      $select_query = "SELECT capacity FROM restaurant_capacity";
+      $result = mysqli_query($conn, $select_query);
+      $row = mysqli_fetch_assoc($result);
+      $people_count = $row['capacity'] ?? 0;
+    ?>
+
+  <p class="text-capacity">Capacité maximum: <span style="font-size:30px; color:red;"><?php echo $people_count; ?></span></p>
+
+      <form action="http://localhost/STUDI/ECF/SiteWeb/front/src/component/adminUpdatePeopleCount.php" method="post" class="form-people">
+        <label for="people_count" class="people-count">Mise à jour du nombre de personnes:</label>
+        <input type="number" id="people_count" name="people_count" min="0" style="width:50px">
+        <input type="submit" value="ENVOYER">
+      </form>
+
+      <?php
+        if (isset($_GET['message']) && $_GET['message'] == 'success') {
+        echo "<p class='people-count'>Mise à jour du nombre de personnes réussie</p>";
+        unset($_GET['message']);
+        }
+      ?>
+  </div>
 </div>
 
 
@@ -107,12 +135,24 @@
 <?php
 if (isset($_GET["id"])) {
   $id = $_GET["id"];
+
+  // Get the number of guests for the booking
+  $sql_guests = "SELECT guests FROM booking WHERE id=$id";
+  $result_guests = mysqli_query($conn, $sql_guests);
+  $guests = mysqli_fetch_assoc($result_guests)["guests"];
+
+  // Delete the booking
   $sql = "DELETE FROM booking WHERE id=$id";
   $result = mysqli_query($conn, $sql);
   if ($result) {
       // Increase the number of available tables by 1
       $sql_update = "UPDATE tables SET available = available + 1";
       $result_update = mysqli_query($conn, $sql_update);
+
+      // Increase the capacity total
+      $sql_update = "UPDATE restaurant_capacity SET capacity = capacity + $guests";
+      $result_update = mysqli_query($conn, $sql_update);
+
       if ($result_update) {
           echo 'success';
       } else {

@@ -73,7 +73,7 @@ include_once '../../../includes/dbh.inc.php';
   });
   </script>
 
-  <!-- Indicate allergy -->
+<!-- Indicate allergy -->
 
     <form>
       <label for="allergy">Avez-vous des allergies alimentaires ?</label>
@@ -124,7 +124,7 @@ include_once '../../../includes/dbh.inc.php';
     }
   <?php } ?>
 
-  // Form to indicate allergy for non-logged-in users
+// Form to indicate allergy for non-logged-in users
 
   select2.addEventListener("change", function(){
     if(select2.value === "yes"){
@@ -134,7 +134,7 @@ include_once '../../../includes/dbh.inc.php';
     }
   });
 
-  // Second form to indicate allergy type
+// Second form to indicate allergy type
 
   allergyType.addEventListener("change", function(){
     if(allergyType.value === "other_allergy"){
@@ -147,17 +147,20 @@ include_once '../../../includes/dbh.inc.php';
   </script>
 
 
-  <!-- Form to indicate the date -->
+<!-- Form to indicate the date -->
 
-  <div class="available-slots" id="available_slots"></div>
+<div class="available-slots" id="available_slots"></div>
+
+<!-- Message if there are no available slots -->
+
 
   <!-- Button to book a slot -->
 
-  <button class="booking_button">Réserver</button>
+<button class="booking_button">Réserver</button>
 
   <!-- SPLIT -->
 
-  <div class="split"></div>
+<div class="split"></div>
 
   </form>
 </div>

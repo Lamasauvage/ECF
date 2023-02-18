@@ -23,4 +23,5 @@ ADMIN
 - Mise en ligne et modification de la carte du restaurant via un fichier CSV (ADMIN)
 - Ajouter/Supprimer les images de la galerie (ADMIN)
 
+
 Execution : Voir le fichier ECF.pdf 

@@ -2,8 +2,10 @@
 
 Création d'un site Web dynamique avec base de données
 
-Langage : PHP/JS/HTML5/CSS3/BOOTSTRAP 5
+Langage : PHP/JS/HTML5/CSS3/BOOTSTRAP5
+
 Environnement : XAMPP/Apache/MySQL/Visual Studio Code
+
 Deploiement : OVHCloud
 
 Execution en local : Voir le fichier ECF.pdf (copie rendu sur Studi)

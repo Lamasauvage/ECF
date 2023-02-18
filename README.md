@@ -13,6 +13,7 @@ Deploiement : OVHCloud
 Fichier de création et alimentation de la base de données : Voir le fichier SQL.html dans le dossier "divers"
 
 Fonctionnalités :
+
 TOUS LES UTILISATEURS
 - Création de compte 
 - Connexion sur le site

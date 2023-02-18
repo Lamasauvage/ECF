@@ -21,6 +21,6 @@ ADMIN
 - Modification du nombre de places total (ADMIN)
 - Suppression/Modification des créneaux réservés par les utilisateurs du site (ADMIN)
 - Mise en ligne et modification de la carte du restaurant via un fichier CSV (ADMIN)
-- Ajouter/Supprimer les images de la gallerie (ADMIN)
+- Ajouter/Supprimer les images de la galerie (ADMIN)
 
 Execution : Voir le fichier ECF.pdf 

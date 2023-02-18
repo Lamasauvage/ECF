@@ -5,6 +5,7 @@ Création d'un site Web dynamique avec base de données
 Langage : PHP/JS/HTML/CSS
 
 Environnement : XAMPP/Apache/MySQL/VsCode
+Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/8.1.12 Server at localhost Port 80
 
 Deploiement : OVHCloud
 

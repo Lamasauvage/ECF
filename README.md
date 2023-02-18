@@ -10,7 +10,7 @@ Execution en local : Voir le fichier ECF.pdf
 
 Deploiement : OVHCloud
 
-Fichier de création et alimentation de la base de données : Voir le fichier SQL.html dans le dossier "divers"
+Fichier de création et alimentation de la base de données : Voir le fichier SQL.html dans le dossier "Documentation"
 
 Fonctionnalités :
 

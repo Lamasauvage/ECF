@@ -6,10 +6,13 @@ Langage : PHP/JS/HTML5/CSS3/BOOTSTRAP 5
 
 Environnement : XAMPP/Apache/MySQL/Visual Studio Code
 
+Execution en local : Voir le fichier ECF.pdf 
+
 Deploiement : OVHCloud
 
-Fonctionnalités :
+Fichier de création et alimentation de la base de données : Voir le fichier SQL.html dans le dossier "divers"
 
+Fonctionnalités :
 TOUS LES UTILISATEURS
 - Création de compte 
 - Connexion sur le site
@@ -24,4 +27,4 @@ ADMIN
 - Ajouter/Supprimer les images de la galerie (ADMIN)
 
 
-Execution : Voir le fichier ECF.pdf 
+

@@ -10,21 +10,6 @@ $timestamp = strtotime($date);
 $date = $frDates[date('l', $timestamp)];
 $formattedDate = date('Y-m-d', $timestamp);
 
-// Retrieve the booked slots for the selected date
-$query = "SELECT time, valid_until FROM booking WHERE date = '" . $formattedDate . "';";
-$result = mysqli_query($conn, $query);
-$booked_slots = array();
-while ($row = mysqli_fetch_assoc($result)) {
-    if (strtotime($row['valid_until']) < time()) {
-        // The booking has expired, so the table is now available
-        $query = "UPDATE tables SET available = available + 1 WHERE table_id = (SELECT table_id FROM booking WHERE time = '" . $row['time'] . "')";
-        mysqli_query($conn, $query);
-    } else {
-        // The booking is still active, so the time slot is not available
-        $booked_slots[] = $row['time'];
-    }
-}
-
 // Retrieve the opening and closing hours for the selected date
 $query = "SELECT open_morning, close_morning, open_evening, close_evening, status FROM restauranthours WHERE day = '" . $date . "';";
 $result = mysqli_query($conn, $query);
@@ -45,8 +30,35 @@ if($result){
   exit();
 }
 
-// Initialize an array to store the available slots
+// Retrieve the booked slots for the selected date
+$query = "SELECT time, valid_until FROM booking WHERE date = '" . $formattedDate . "';";
+$result = mysqli_query($conn, $query);
+$booked_slots = array();
+while ($row = mysqli_fetch_assoc($result)) {
+    if (strtotime($row['valid_until']) < time()) {
+        // The booking has expired, so the table is now available
+        $query = "UPDATE tables SET available = available + 1 WHERE table_id = (SELECT table_id FROM booking WHERE time = '" . $row['time'] . "')";
+        mysqli_query($conn, $query);
+    } else {
+        // The booking is still active, so the time slot is not available
+        $booked_slots[] = $row['time'];
+        $end_time = strtotime($row['valid_until']);
+        for ($time = $open_time_morning; $time <= $close_time_evening; $time = strtotime("+15 minutes", $time)) {
+            if (strtotime("+1 hour", $time) > $close_time_evening) {
+                continue;
+            }
+            if ($time > $end_time && !in_array(date("H:i", $time), $available_slots_0)) {
+                $available_slots_0[] = date("H:i", $time);
+            }
+        }
+    }
+}
+
+// Initialize an array to store the available slots when table > 1
 $available_slots = array();
+
+// Initialize an array to store the available slots when table = 0
+$available_slots_0 = array();
 
 // Iterate through the hours of the day
 
@@ -62,7 +74,8 @@ for ($time = $open_time_morning; $time <= $close_time_morning; $time = strtotime
       if ($row['available'] > 0) {
         $available_slots[] = date("H:i", $time);
       } else {
-        $available_slots[] = date("H:i", strtotime("+1 hour", $time));
+        $available_slots_0[] = date("H:i", $time);
+        $available_slots = $available_slots_0;
       }
     }
   }
@@ -79,7 +92,8 @@ for ($time = $open_time_evening; $time <= $close_time_evening; $time = strtotime
       if ($row['available'] > 0) {
         $available_slots[] = date("H:i", $time);
       } else {
-        $available_slots[] = date("H:i", strtotime("+1 hour", $time));
+        $available_slots_0[] = date("H:i", $time);
+        $available_slots = $available_slots_0;
       }
     }
   }

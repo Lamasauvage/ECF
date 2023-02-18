@@ -1,0 +1,152 @@
+Toutes les tables de la base de données ont été créées avec MySQL Command Line Client.
+Toutes les opérations d'ajout, de modification et de suppression de données ont aussi été effectuées avec MySQL Command Line Client.
+" CREATE / DELETE / ADD / REMOVE / ALTER / MODIFY / SELECT / TRUNCATE / etc. "
+
+Ci-dessous voici les tables de la base de données avec leurs champs et leurs types de données.
+
+
+      +------------------+--------------+------+-----+---------+----------------+
+      +------------------+--------------+------+-----+---------+----------------+
+
+
+
+            SQL Table for all the tables in the restaurant
+  +-----------+------+------+-----+---------+----------------+
+  | Field     | Type | Null | Key | Default | Extra          |
+  +-----------+------+------+-----+---------+----------------+
+  | available | int  | YES  |     | NULL    |                |
+  | table_id  | int  | NO   | PRI | NULL    | auto_increment |
+  +-----------+------+------+-----+---------+----------------+
+
+      available = nombre total de tables disponible
+      table_id = id de la table
+
+
+            SQL Table for the capacity maximum in the restaurant (people)
+
+  +----------+------+------+-----+---------+----------------+
+  | Field    | Type | Null | Key | Default | Extra          |
+  +----------+------+------+-----+---------+----------------+
+  | id       | int  | NO   | PRI | NULL    | auto_increment |
+  | capacity | int  | NO   |     | NULL    |                |
+  +----------+------+------+-----+---------+----------------+
+
+      id = id de la capacité
+      capacity = capacité maximum du restaurant
+
+
+
+                  SQL Table for booking a table
+  +--------------+--------------+------+-----+---------+----------------+
+  | Field        | Type         | Null | Key | Default | Extra          |
+  +--------------+--------------+------+-----+---------+----------------+
+  | id           | int          | NO   | PRI | NULL    | auto_increment |
+  | time         | time         | NO   |     | NULL    |                |
+  | guests       | int          | NO   |     | NULL    |                |
+  | name         | varchar(255) | NO   |     | NULL    |                |
+  | email        | varchar(255) | NO   |     | NULL    |                |
+  | phone        | varchar(255) | NO   |     | NULL    |                |
+  | allergy      | varchar(255) | NO   |     | NULL    |                |
+  | allergy_type | varchar(255) | NO   |     | NULL    |                |
+  | date         | date         | NO   |     | NULL    |                |
+  | table_id     | int          | YES  |     | NULL    |                |
+  | valid_until  | timestamp    | NO   |     | NULL    |                |
+  +--------------+--------------+------+-----+---------+----------------+
+
+      id = id de la réservation
+      time = heure de la réservation
+      guests = nombre de personnes
+      name = nom du client
+      email = email du client
+      phone = numéro de téléphone du client
+      allergy = booléen pour savoir si le client a une allergie ou non
+      allergy_type = type d'allergie du client
+      date = date de la réservation
+      table_id = id de la table réservée
+      valid_until = date d'expiration de la réservation
+
+
+
+
+                        SQL Table for users
+  +--------------+--------------+------+-----+---------+----------------+
+  | Field        | Type         | Null | Key | Default | Extra          |
+  +--------------+--------------+------+-----+---------+----------------+
+  | ID           | int          | NO   | PRI | NULL    | auto_increment |
+  | email        | varchar(255) | NO   |     | NULL    |                |
+  | password     | varchar(255) | NO   |     | NULL    |                |
+  | is_admin     | tinyint(1)   | YES  |     | 0       |                |
+  | guests       | int          | NO   |     | 1       |                |
+  | allergy      | tinyint(1)   | YES  |     | NULL    |                |
+  | allergy_type | varchar(255) | NO   |     |         |                |
+  +--------------+--------------+------+-----+---------+----------------+
+
+      ID = id de l'utilisateur
+      email = email de l'utilisateur
+      password = mot de passe de l'utilisateur
+      is_admin = booléen pour savoir si l'utilisateur est un administrateur ou non
+      guests = nombre de personnes par défaut pour l'utilisateur
+      allergy = booléen pour savoir si l'utilisateur a une allergie ou non
+      allergy_type = type d'allergie de l'utilisateur
+
+
+
+
+                  SQL Table for the dishes
+  +-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| id          | int           | NO   | PRI | NULL    | auto_increment |
+| title       | varchar(255)  | NO   |     | NULL    |                |
+| description | text          | NO   |     | NULL    |                |
+| price       | decimal(10,2) | NO   |     | NULL    |                |
+| categorie   | varchar(255)  | NO   |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+
+      id = id du plat
+      title = nom du plat
+      description = description du plat
+      price = prix du plat
+      categorie = catégorie du plat
+
+
+
+        SQL Table for the restaurant hours
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| id            | int         | NO   | PRI | NULL    | auto_increment |
+| day           | varchar(10) | NO   |     | NULL    |                |
+| open_morning  | time        | NO   |     | NULL    |                |
+| close_morning | time        | NO   |     | NULL    |                |
+| open_evening  | time        | NO   |     | NULL    |                |
+| close_evening | time        | NO   |     | NULL    |                |
+| status        | tinyint     | NO   |     | 1       |                |
++---------------+-------------+------+-----+---------+----------------+
+
+      id = id de l'heure
+      day = jour d'ouverture
+      open_morning = heure d'ouverture le matin
+      close_morning = heure de fermeture le matin
+      open_evening = heure d'ouverture le soir
+      close_evening = heure de fermeture le soir
+      status = booléen pour savoir si le restaurant est ouvert ou non
+
+
+
+                  SQL Table for the gallery
++--------------------+----------+------+-----+---------+----------------+
+| Field              | Type     | Null | Key | Default | Extra          |
++--------------------+----------+------+-----+---------+----------------+
+| idGallery          | int      | NO   | PRI | NULL    | auto_increment |
+| titleGallery       | longtext | NO   |     | NULL    |                |
+| descriptionGallery | longtext | NO   |     | NULL    |                |
+| imgFullNameGallery | longtext | NO   |     | NULL    |                |
+| orderGallery       | longtext | NO   |     | NULL    |                |
++--------------------+----------+------+-----+---------+----------------+
+
+            idGallery = id de l'image
+            titleGallery = titre de l'image
+            descriptionGallery = description de l'image
+            imgFullNameGallery = nom de l'image
+            orderGallery = ordre de l'image

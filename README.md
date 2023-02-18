@@ -1,4 +1,4 @@
-# ECF / Le Quai Antique (Restaurant)
+# ECF / Le Quai Antique
 
 Création d'un site Web dynamique avec base de données
 

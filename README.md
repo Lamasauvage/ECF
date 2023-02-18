@@ -1,4 +1,4 @@
-# ECF / STUDI Projet (Restaurant)
+# ECF / Le Quai Antique (Restaurant)
 
 Création d'un site Web dynamique avec base de données
 

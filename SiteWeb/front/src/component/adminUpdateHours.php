@@ -7,7 +7,7 @@
   <div class="container-footer">
     <h2>Nos horaires d'ouverture</h2>
     <table>
-      
+
       <tbody>
         <?php
           $days = array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');

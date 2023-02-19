@@ -12,14 +12,15 @@ include_once '../../../includes/dbh.inc.php';
       $allergy = $row['allergy'];
       $allergy_type = $row['allergy_type'];
 
-      mysqli_close($conn);
     } else {
       $email = "";
       $guests = 1;
       $allergy = "";
       $allergy_type = "";
     }
+
 ?>
+
 
 <!-- Form to indicate name/email and phone -->
 

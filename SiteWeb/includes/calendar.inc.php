@@ -26,7 +26,7 @@ if($result){
     exit();
   }
 }else{
-  echo "An error occured while fetching the opening and closing hours";
+  echo "Une erreur est survenue lors de la récupération des horaires du restaurant.";
   exit();
 }
 

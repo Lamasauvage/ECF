@@ -204,7 +204,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin@localhost.com','$2y$10$LZ/Nc3gUY.d6/RwohQ81Y.dDQSYDNDDDuDO7eLrbqp99iitR6ZpM.',0,1,0,''),(2,'allergyfish@test.com','$2y$10$uQ/TWLVAdbbApvx/CPGaTuNblkB25zBJ6uHbiq03jltpWHMZkTJpG',0,5,1,'fish');
+INSERT INTO `users` VALUES (1,'admin@localhost.com','$2y$10$LZ/Nc3gUY.d6/RwohQ81Y.dDQSYDNDDDuDO7eLrbqp99iitR6ZpM.',1,1,0,''),(2,'allergyfish@test.com','$2y$10$uQ/TWLVAdbbApvx/CPGaTuNblkB25zBJ6uHbiq03jltpWHMZkTJpG',0,5,1,'fish');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -99,7 +99,7 @@ $(document).ready(function() {
                                 success: function (data) {
                                     console.log("Ajax call success: " + (data));
                                     if (data.indexOf("success") != -1) {
-                                        alert("Votre réservation a bien été prise en compte");
+                                        alert("Votre réservation pour le " + formattedDate + " à " + time + " a bien été prise en compte");
                                         window.location.href = "http://localhost/STUDI/ECF/SiteWeb/front/src/pages/index.php";
                                     } else {
                                         console.log("Ajax call error: " + data);

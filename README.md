@@ -2,7 +2,7 @@
 
 Création d'un site Web dynamique avec base de données
 
-https://www.lequai-antique.fr/front/src/pages/index.php
+https://www.lequai-antique.fr/front/src/pages/index.php (not online anymore)
 
 Langage : PHP/JS/HTML5/CSS3/BOOTSTRAP5
 
